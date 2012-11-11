@@ -63,7 +63,6 @@ class @Track
     Art.search word, (arts) ->
       $("body").on "click", "#beat", -> 
         words = arts[0].find_interesting_words()
-        alert(words)
         ms = new MusicSearch(words)
         ms.searchAndPlay()
       if arts[0]?
