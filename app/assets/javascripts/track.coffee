@@ -57,7 +57,10 @@ class @Track
     $('.lyrics').highlight(word)
 
     Art.search word, (arts) ->
-      $('#art').html("""<img src="#{arts[0].image_url(Art.SIZE_768)}">""")
+      if arts[0]?
+        $('#art').html("""<img src="#{arts[0].image_url(Art.SIZE_768)}">""")
+      else
+        $('#art').html("""<p>No art.</p>""")
 
   loadRdio : (fn) ->
     R.request

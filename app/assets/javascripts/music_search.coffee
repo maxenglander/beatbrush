@@ -1,7 +1,9 @@
 class window.MusicSearch
   constructor : (@words) ->
 
-  search : =>
+  search : (callback) =>
+
+    @searchCallback = callback
 
     $.ajax
       url: "/music/search"
@@ -12,6 +14,7 @@ class window.MusicSearch
       error: @handleError
 
   handleResponse : (resp) =>
+    @searchCallback.call(this, resp) if @searchCallback?
     $('#results').html('')
     setTimeout( ->
       $('#music_search').fadeOut()
