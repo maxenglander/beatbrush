@@ -4,8 +4,6 @@ class window.MusicSearch
   search : (callback) =>
     @searchCallback = callback
 
-    $(".header").html("<button>Beat.</button><button>Brush.</button>")
-
     $.ajax
       url: "/music/search"
       data:

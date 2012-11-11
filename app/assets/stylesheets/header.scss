@@ -1,6 +1,9 @@
 header {
   border-bottom: 1px solid #eee;
+  height: 35px;
+
   h1 {
+    display: inline;
     font-weight: normal;
     font-size: 13px;
     letter-spacing: 0.1em;
@@ -10,11 +13,7 @@ header {
   }
 
   .new-search {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 0;
-    left: 0;
+    display: inline;
     a {
       color: blue;
       text-decoration: none;
