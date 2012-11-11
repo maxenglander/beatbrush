@@ -11,6 +11,7 @@ $ ->
 class @Track
 
   constructor : (@name, @artist, @lyric_snippet, @gr_id, @search_words) ->
+    Utility.current_track = @
     @el = $("""<div class='music'>
       <div class="image"></div>
       <div class="data">
@@ -18,9 +19,6 @@ class @Track
         <p class="lyrics"></p>
       </div>
       </div>""")
-
-  el : ->
-    @el
 
   get_lyrics : ->
     if @full_lyrics?
