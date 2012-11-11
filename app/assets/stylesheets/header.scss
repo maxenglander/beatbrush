@@ -1,19 +1,31 @@
 header {
   border-bottom: 1px solid #eee;
   height: 35px;
+  width: 100%;
+  position: relative;
 
   h1 {
     display: inline;
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    width: 200px;
+    height: 25px;
     font-weight: normal;
     font-size: 13px;
     letter-spacing: 0.1em;
     font-family: verdana;
-    padding-left: 20px;
-    margin: 1.2em 0;
+    padding: 0px;
+    margin: 0px;
   }
 
   .new-search {
-    display: inline;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 100px;
+    height: 25px;
+    margin: auto;
     a {
       color: blue;
       text-decoration: none;
