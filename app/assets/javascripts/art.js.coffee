@@ -9,6 +9,8 @@ class @Art
 
   constructor: (@data) ->
 
+  find_interesting_words: ->
+
   image_url: (size=null) ->
     image_id = @data.primary_image_id
     image_dir = image_id.substring(0, 6)

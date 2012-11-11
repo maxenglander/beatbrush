@@ -42,9 +42,8 @@ class @Track
         @el.click => @findInterestingWord()
 
   findInterestingWord : ->
-    simples = ["with", "this", "that", "there", "can't", "your", "after", "like", "much", "they", "yeah", ]
     lyrics = @el.find('.lyrics').text()
-    lyrics = _.reject lyrics.split(/[,.]?\s+/), (w) -> w.length < 4 || _.contains(simples,w.toLowerCase())
+    lyrics = _.reject lyrics.split(/[,.]?\s+/), (w) -> w.length < 4 || _.contains(Utility.stop_words,w.toLowerCase())
     frequencies = {}
     _.each lyrics, (l) ->
       d = l.toLowerCase()
