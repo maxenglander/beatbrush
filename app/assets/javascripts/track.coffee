@@ -35,6 +35,7 @@ class @Track
       data:
         gr_id: @gr_id
       success: (resp) =>
+        Utility.current_track = @
         @full_lyrics = resp.lyrics
         @render()
         @el.addClass('withFullLyrics')
