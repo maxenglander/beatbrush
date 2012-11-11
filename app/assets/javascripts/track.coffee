@@ -24,6 +24,7 @@ class window.Track
     @el.find('.lyrics').html("""#{@get_lyrics()}""")
 
     _.each @search_words.split(" "), (w) => @el.highlight(w)
+
     this
 
   getFullLyrics : ->
@@ -36,6 +37,27 @@ class window.Track
       success: (resp) =>
         @full_lyrics = resp.lyrics
         @render()
+        @el.find('.image').slideUp()
+        @el.addClass('withFullLyrics')
+        @el.click => @findInterestingWord()
+
+  findInterestingWord : ->
+    simples = ["there", "can't", "your", "after", "like", "much", "they"]
+    lyrics = @el.find('.lyrics').text()
+    lyrics = _.reject lyrics.split(/[,.]?\s+/), (w) -> w.length < 4 || _.contains(simples,w.toLowerCase())
+    frequencies = {}
+    _.each lyrics, (l) ->
+      d = l.toLowerCase()
+      frequencies[d] = (frequencies[d] || 0) + 1
+    sorted = _.sortBy _.keys(frequencies), (k) -> frequencies[k]
+
+    # Take the last five and pick randomly.
+    last = sorted.slice(-5)
+    word = last[Math.floor(Math.random() * last.length)]
+    console.log(word)
+    $('.lyrics').removeHighlight()
+    $('.lyrics').highlight(word)
+
 
   loadRdio : (fn) ->
     R.request
@@ -50,7 +72,7 @@ class window.Track
         @icon = result.icon
         @key = result.key
         @render()
-        @el.click =>
+        @el.one 'click', =>
           R.player.play source: result.key
           @getFullLyrics()
         fn.apply(this)

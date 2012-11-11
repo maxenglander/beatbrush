@@ -18,6 +18,12 @@
   &:hover {
     opacity: 1.0;
   }
+  &.withFullLyrics {
+    .name { font-size: 1.2em; }
+    .lyrics { font-style: normal; }
+    cursor: default;
+    opacity: 1.0;
+  }
 }
 
 .highlight { background-color: yellow; }

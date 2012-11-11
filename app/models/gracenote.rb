@@ -22,7 +22,7 @@ class Gracenote
 
     doc = Nokogiri::XML(response.body)
 
-    lyrics = doc.xpath('//LYRIC/BLOCK').map { |l| l.content }.join("\n")
+    lyrics = doc.xpath('//LYRIC/BLOCK').map { |l| l.content }.join("\n").gsub("\n", "<br>")
   end
 
   def self.query(words)
