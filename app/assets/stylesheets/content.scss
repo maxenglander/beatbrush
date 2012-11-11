@@ -14,3 +14,13 @@ border-bottom: 1px dotted black;
     color: #555;
   }
 }
+
+header button {
+  border: 1px solid #AAA;
+  background-color: #eee;
+  font-size: 13px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ccc;
+  }
+}

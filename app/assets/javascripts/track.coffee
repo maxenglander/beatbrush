@@ -1,3 +1,10 @@
+$ ->
+  R.ready ->
+    R.player.on "change:playState", (state) ->
+      if state is R.player.PLAYSTATE_STOPPED
+        $('header button#beat').click()
+
+
 class @Track
 
   constructor : (@name, @artist, @lyric_snippet, @gr_id, @search_words) ->
