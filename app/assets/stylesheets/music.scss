@@ -4,13 +4,25 @@
   font-size: 22px;
 }
 
+#music {
+  margin-left: 3px;
+  margin-top: 23px;
+}
+
+#results {
+  margin-top: 23px;
+}
+
+
 .music {
   width: 500px;
   overflow: auto;
+  margin: 1em;
   .image {
     float: left;
     padding-right: 10px;
   }
+  .name { margin-top: 0; }
   .lyrics { font-style: italic; }
 
   cursor: pointer;

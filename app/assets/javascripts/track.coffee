@@ -20,7 +20,7 @@ class @Track
 
   render : =>
     @el.find('.image').html("""<img src="#{@icon}">""") if @icon?
-    @el.find('.name').html("""#{@name} <strong>#{@artist}</strong>""")
+    @el.find('.name').html("""#{@name}<br><strong>#{@artist}</strong>""")
     @el.find('.lyrics').html("""#{@get_lyrics()}""")
 
     _.each @search_words.split(" "), (w) => @el.highlight(w)
@@ -37,7 +37,6 @@ class @Track
       success: (resp) =>
         @full_lyrics = resp.lyrics
         @render()
-        @el.find('.image').slideUp()
         @el.addClass('withFullLyrics')
         @el.click => @findInterestingWord()
 

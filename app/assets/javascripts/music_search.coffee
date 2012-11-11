@@ -25,7 +25,8 @@ class window.MusicSearch
       $('#results').append(track.el)
       track.loadRdio ->
         track.el.click ->
-          $('#results .music').not(track.el).fadeOut -> $(@).remove()
+          $('#music').html(track.el)
+          $('#results .music').fadeOut -> $(@).remove()
 
   handleError : (resp) =>
     console.log('error!', resp)
