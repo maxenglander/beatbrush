@@ -1,7 +1,7 @@
 $ ->
 
   R.ready ->
-    $('#search').fadeIn().submit (e) ->
+    $('#music_search').fadeIn().submit (e) ->
 
       terms = $('#musicSearch').val()
 
