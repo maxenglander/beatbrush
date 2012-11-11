@@ -48,7 +48,7 @@ class @Track
         @render()
         @el.addClass('withFullLyrics')
         _.each @search_words.split(" "), (w) =>
-          if @full_lyrics.indexOf(w) >= 0
+          if @full_lyrics.toLowerCase().indexOf(w.toLowerCase()) >= 0
             @searchArt(w)
         R.player.play source: @key
 

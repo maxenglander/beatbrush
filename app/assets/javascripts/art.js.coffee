@@ -25,7 +25,6 @@ class @Art
     "#{Art.IMG_ROOT_URL}/#{image_dir}/#{image_id}#{size_param}.jpg"
 
   @search: (term, callback) ->
-    console.log("searching")
     search_uri = "#{@SEARCH_URI}?term=#{term}"
     $.get search_uri, (data) -> callback(new Art(i) for i in data)
 
