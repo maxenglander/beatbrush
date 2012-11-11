@@ -52,7 +52,6 @@ class window.MusicSearch
               track.getFullLyrics()
           else
             return
-          end
       error: @handleError
 
   handleError : (resp) =>
