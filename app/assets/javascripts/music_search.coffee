@@ -40,6 +40,10 @@ class window.MusicSearch
           $('#music_search').fadeOut()
         , 200)
         selectedTrack = undefined
+        if resp.length is 0
+          $('header .notice').show().text("No music found. Try again.")
+          $('header button').one 'click', ->
+            $('header .notice').fadeOut()
         _.each resp, (o) =>
           return if (selectedTrack)
           current = Utility.current_track
