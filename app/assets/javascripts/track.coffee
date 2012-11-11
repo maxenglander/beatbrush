@@ -38,7 +38,6 @@ class @Track
         @full_lyrics = resp.lyrics
         @render()
         @el.addClass('withFullLyrics')
-        @el.click => @findInterestingWord()
         @searchArt(@search_words.split(" ")[0])
 
   setupClickHandler : ->
