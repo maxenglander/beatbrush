@@ -1,12 +1,5 @@
 $ ->
 
-  R.ready ->
-    $('#music_search').fadeIn().submit (e) ->
-
-      terms = $('#musicSearch').val()
-
-      search = new MusicSearch(terms)
-      search.search()
-
-      e.preventDefault()
-      false
+  window.startSearch = new StartSearch
+  $('body').prepend(startSearch.el)
+  startSearch.init()
