@@ -8,6 +8,8 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 gem 'musix_match'
+gem 'faraday'
+gem 'nokogiri'
 
 
 # Gems used only for assets and not required

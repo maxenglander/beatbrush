@@ -3,3 +3,19 @@
   right: 200px;
   font-size: 22px;
 }
+
+.music {
+  width: 500px;
+  overflow: auto;
+  .image {
+    float: left;
+    padding-right: 10px;
+  }
+  .lyrics { font-style: italic; }
+
+  cursor: pointer;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1.0;
+  }
+}
