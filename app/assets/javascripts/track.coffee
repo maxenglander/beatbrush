@@ -61,12 +61,14 @@ class @Track
 
   searchArt : (word) ->
     Art.search word, (arts) ->
+      $("body").on "click", "#beat", -> 
+        words = arts[0].find_interesting_words()
+        alert(words)
+        ms = new MusicSearch(words)
+        ms.searchAndPlay()
       if arts[0]?
         image = "<img src='#{arts[0].image_url(Art.SIZE_355)}' />"
-        if arts[0].data.term_contexts?
-          meta = arts[0].data.term_contexts.join("; ")
-        else
-          meta = ""
+        meta = arts[0].text().join("<br/><br/>")
         $('#art').html("<div>#{image}<p style='max-width:355px;'>#{meta}</p></div>").highlight(word)
       else
         $('#art').html("""<p>No art.</p>""")
