@@ -1,4 +1,4 @@
-class window.Track
+class @Track
 
   constructor : (@name, @artist, @lyric_snippet, @gr_id, @search_words) ->
     @el = $("""<div class='music'>
@@ -42,7 +42,7 @@ class window.Track
         @el.click => @findInterestingWord()
 
   findInterestingWord : ->
-    simples = ["there", "can't", "your", "after", "like", "much", "they"]
+    simples = ["with", "this", "that", "there", "can't", "your", "after", "like", "much", "they", "yeah", ]
     lyrics = @el.find('.lyrics').text()
     lyrics = _.reject lyrics.split(/[,.]?\s+/), (w) -> w.length < 4 || _.contains(simples,w.toLowerCase())
     frequencies = {}
@@ -54,10 +54,11 @@ class window.Track
     # Take the last five and pick randomly.
     last = sorted.slice(-5)
     word = last[Math.floor(Math.random() * last.length)]
-    console.log(word)
     $('.lyrics').removeHighlight()
     $('.lyrics').highlight(word)
 
+    Art.search word, (arts) ->
+      $('#art').html("""<img src="#{arts[0].image_url(Art.SIZE_768)}">""")
 
   loadRdio : (fn) ->
     R.request
