@@ -78,6 +78,8 @@ class @Track
       if arts[0]?
         image = "<img src='#{arts[0].image_url(Art.SIZE_355)}' />"
         meta = arts[0].text().join("<br/><br/>")
+        if arts[0].data.term_contexts?
+          meta = meta.concat("<br/><br/>").concat(arts[0].data.term_contexts.join("; "))
         $('#art').html("<div>#{image}<p style='max-width:355px;'>#{meta}</p></div>").highlight(word)
       else
         $('#art').html("""<p>No art.</p>""")
