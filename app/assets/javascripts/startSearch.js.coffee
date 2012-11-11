@@ -11,6 +11,11 @@ class @StartSearch
   el : -> @el
 
   init : ->
+    $('.new-search').click =>
+      $('#art').html('')
+      $('#results').html('')
+      @el.fadeIn()
+      $('.new-search').fadeOut()
     R.ready =>
       @el.fadeIn().submit (e) =>
         @el.find('.status').html('')
@@ -19,6 +24,7 @@ class @StartSearch
         search.search (results) =>
           if _.any?(results)
             @el.fadeOut()
+            $('.new-search').fadeIn()
           else
             @el.find('.status').html('No results found.')
         e.preventDefault()

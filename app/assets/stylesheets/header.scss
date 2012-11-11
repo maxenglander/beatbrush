@@ -1,0 +1,25 @@
+header {
+  border-bottom: 1px solid #eee;
+  h1 {
+    font-weight: normal;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    font-family: verdana;
+    padding-left: 20px;
+    margin: 1.2em 0;
+  }
+
+  .new-search {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    a {
+      color: blue;
+      text-decoration: none;
+      font-family: verdana;
+      font-size:13px;
+    }
+  }
+}

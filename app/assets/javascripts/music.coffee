@@ -1,5 +1,5 @@
 $ ->
 
   window.startSearch = new StartSearch
-  $('body').prepend(startSearch.el)
+  $('#content').prepend(startSearch.el)
   startSearch.init()
