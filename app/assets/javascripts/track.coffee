@@ -43,7 +43,7 @@ class @Track
 
   findInterestingWord : ->
     lyrics = @el.find('.lyrics').text()
-    lyrics = _.reject lyrics.split(/[,.]?\s+/), (w) -> w.length < 4 || _.contains(Utility.stop_words,w.toLowerCase())
+    lyrics = _.reject lyrics.split(/[,.]?\s+/), (w) -> w.length < 4 || Utility.stop_word(w)
     frequencies = {}
     _.each lyrics, (l) ->
       d = l.toLowerCase()
