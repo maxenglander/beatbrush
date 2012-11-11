@@ -3,6 +3,9 @@ $ ->
     R.player.on "change:playState", (state) ->
       if state is R.player.PLAYSTATE_STOPPED
         $('header button#beat').click()
+  $("body").on "click", "#brush", -> 
+    if Utility.current_track?
+      Utility.current_track.findInterestingWord()
 
 
 class @Track
@@ -50,7 +53,6 @@ class @Track
         R.player.play source: @key
 
   setupClickHandler : ->
-    $("body").on "click", "#brush", => @findInterestingWord()
 
   findInterestingWord : ->
     lyrics = @el.find('.lyrics').text()
