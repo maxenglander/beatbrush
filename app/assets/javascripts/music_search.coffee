@@ -13,6 +13,7 @@ class window.MusicSearch
 
   handleResponse : (resp) =>
     $('#results').html('')
+    $('#search').fadeOut()
     _.each resp, (o) =>
       track = new Track(o.name, o.artist, o.lyrics, o.gr_id, @words)
       $('#results').append(track.el)
