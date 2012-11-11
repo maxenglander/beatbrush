@@ -1,7 +1,7 @@
 require 'open-uri'
 class ArtsController < ApplicationController
   API_ROOT_URL = "http://www.vam.ac.uk/api/json/museumobject"
-  LIMIT = 3
+  LIMIT = 1
 
   def demo
   end
@@ -9,7 +9,7 @@ class ArtsController < ApplicationController
   def search
     @results = []
 
-    remote_search_uri = URI.parse "#{API_ROOT_URL}/search?q=#{params[:term]}&random=1&images=1&limit=#{get_limit}"
+    remote_search_uri = URI.parse "#{API_ROOT_URL}/search?q=#{params[:term]}&images=1&limit=#{get_limit}"
     remote_results = JSON.parse(remote_search_uri.read)
     remote_results["records"].each do |remote_result|
       remote_detailed_uri = URI.parse "#{API_ROOT_URL}/#{remote_result["fields"]["object_number"]}"
