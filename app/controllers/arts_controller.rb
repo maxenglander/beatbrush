@@ -32,10 +32,10 @@ class ArtsController < ApplicationController
   def contextualize_term term, value, matches=nil
     matches ||= []
     if value.kind_of? String
-      sentences = value.split(".")
+      sentences = value.split(". ").uniq
       sentences.each do |sentence|
-        if sentence.downcase.include? term.downcase
-          matches << [ sentence, sentence.index(term) ]
+        if sentence.include? term
+          matches << sentence
         end
       end
     elsif value.kind_of? Array
@@ -47,7 +47,7 @@ class ArtsController < ApplicationController
         matches.concat contextualize_term(term, subvalue)
       end
     end
-    return matches
+    return matches.uniq
   end
 
   def get_limit
