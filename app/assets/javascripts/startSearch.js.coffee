@@ -11,9 +11,10 @@ class @StartSearch
   el : -> @el
 
   init : ->
-    $('.new-search').click =>
+    $('.new-search a').click =>
       $('#art').html('')
       $('#results').html('')
+      $('#music').html('')
       @el.fadeIn()
       $('.new-search').fadeOut()
     R.ready =>
