@@ -74,9 +74,14 @@ class @Track
     Art.search word, (arts) ->
       $("body").off "click", "#beat"
       $("body").on "click", "#beat", ->
-        words = arts[0].find_interesting_words()
-        ms = new MusicSearch(words)
-        ms.searchAndPlay()
+        if arts[0]?
+          words = arts[0].find_interesting_words()
+          ms = new MusicSearch(words)
+          ms.searchAndPlay()
+        else
+          $('header .notice').show().text("No dice. Try brush.")
+          $('header button').one 'click', ->
+            $('header .notice').fadeOut()
       if arts[0]?
         image = "<img src='#{arts[0].image_url(Art.SIZE_355)}' />"
         meta = arts[0].text().join("<br/><br/>")
