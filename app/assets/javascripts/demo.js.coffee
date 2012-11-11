@@ -1,5 +1,5 @@
 $ ->
-  $("#search").on "click", "#submit", (eventObject) ->
+  $("#art_search").on "click", "#submit", (eventObject) ->
     term = $("#term").val()
     try
       Art.search term, (results) ->
