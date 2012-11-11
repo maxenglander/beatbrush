@@ -1,5 +1,6 @@
 class @StartSearch
   constructor : ->
+    $("header").hide()
     @el = $ """<form id="start_search">
       <h1>Beat. Brush.</h1>
         <input type="text" id="musicSearch">
@@ -16,7 +17,7 @@ class @StartSearch
       $('#results').html('')
       $('#music').html('')
       @el.fadeIn()
-      $('.new-search').fadeOut()
+      $('header').fadeOut()
     R.ready =>
       @el.fadeIn().submit (e) =>
         @el.find('.status').html('')
@@ -25,7 +26,7 @@ class @StartSearch
         search.search (results) =>
           if _.any?(results)
             @el.fadeOut()
-            $('.new-search').fadeIn()
+            $('header').fadeIn()
           else
             @el.find('.status').html('No results found.')
         e.preventDefault()
