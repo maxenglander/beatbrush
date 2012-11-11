@@ -39,6 +39,10 @@ class @Track
         @render()
         @el.addClass('withFullLyrics')
         @el.click => @findInterestingWord()
+        @searchArt(@search_words.split(" ")[0])
+
+  setupClickHandler : ->
+    @el.click => @findInterestingWord()
 
   findInterestingWord : ->
     lyrics = @el.find('.lyrics').text()
@@ -54,11 +58,16 @@ class @Track
     word = last[Math.floor(Math.random() * last.length)]
     $('.lyrics').removeHighlight()
     $('.lyrics').highlight(word)
+    @searchArt(word)
 
+  searchArt : (word) ->
     Art.search word, (arts) ->
       if arts[0]?
         image = "<img src='#{arts[0].image_url(Art.SIZE_355)}' />"
-        meta = arts[0].data.term_contexts.join("; ")
+        if arts[0].data.term_contexts?
+          meta = arts[0].data.term_contexts.join("; ")
+        else
+          meta = ""
         $('#art').html("<div>#{image}<p style='max-width:355px;'>#{meta}</p></div>").highlight(word)
       else
         $('#art').html("""<p>No art.</p>""")

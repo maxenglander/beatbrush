@@ -26,6 +26,7 @@ class window.MusicSearch
       track.loadRdio ->
         track.el.click ->
           $('#music').html(track.el)
+          track.setupClickHandler()
           $('#results .music').fadeOut -> $(@).remove()
 
   handleError : (resp) =>
