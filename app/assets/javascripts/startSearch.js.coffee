@@ -11,6 +11,14 @@ class @StartSearch
 
   el : -> @el
 
+  footer : ->
+    if R.authenticated()
+      $("")
+    else
+      $("<p class='signup'><a href=#>Authenticate with RDio</a> for full tracks.</p>").click ->
+        R.authenticate()
+        $(@).fadeOut()
+
   init : ->
     $('.new-search a').click =>
       $('#art').html('')
@@ -19,6 +27,7 @@ class @StartSearch
       @el.fadeIn()
       $('header').fadeOut()
     R.ready =>
+      @el.append(@footer())
       @el.fadeIn().submit (e) =>
         @el.find('.status').html('')
         terms = $('#musicSearch').val()
