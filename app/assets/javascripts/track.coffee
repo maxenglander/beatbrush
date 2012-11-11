@@ -40,9 +40,10 @@ class @Track
         @render()
         @el.addClass('withFullLyrics')
         @searchArt(@search_words.split(" ")[0])
+        R.player.play source: @key
 
   setupClickHandler : ->
-    @el.click => @findInterestingWord()
+    $("body").on "click", "#brush", => @findInterestingWord()
 
   findInterestingWord : ->
     lyrics = @el.find('.lyrics').text()
@@ -62,7 +63,8 @@ class @Track
 
   searchArt : (word) ->
     Art.search word, (arts) ->
-      $("body").on "click", "#beat", -> 
+      $("body").off "click", "#beat"
+      $("body").on "click", "#beat", ->
         words = arts[0].find_interesting_words()
         ms = new MusicSearch(words)
         ms.searchAndPlay()
@@ -87,7 +89,6 @@ class @Track
         @key = result.key
         @render()
         @el.one 'click', =>
-          R.player.play source: result.key
           @getFullLyrics()
         fn.apply(this)
         true
