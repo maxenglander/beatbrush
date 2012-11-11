@@ -2,8 +2,9 @@ class window.MusicSearch
   constructor : (@words) ->
 
   search : (callback) =>
-
     @searchCallback = callback
+
+    $(".header").html("<button>Beat.</button><button>Brush.</button>")
 
     $.ajax
       url: "/music/search"
@@ -25,8 +26,6 @@ class window.MusicSearch
       track.loadRdio ->
         track.el.click ->
           $('#results .music').not(track.el).fadeOut -> $(@).remove()
-
-
 
   handleError : (resp) =>
     console.log('error!', resp)

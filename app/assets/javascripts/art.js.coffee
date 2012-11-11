@@ -10,16 +10,13 @@ class @Art
   constructor: (@data) ->
 
   find_interesting_words: ->
-    text = [ @data.physical_description, @data.materials_techniques, @.descriptive_line, @.history_note ].join()
-    lyrics = _.reject lyrics.split(/[,.]?\s+/), (w) -> w.length < 4 || Utility.stop_word(w)
+    no_stops = _.reject text().split(/[,.]?\s+/), (w) -> w.length < 4 || Utility.stop_word(w)
     frequencies = {}
-    _.each lyrics, (l) ->
+    _.each no_stops, (l) ->
       d = l.toLowerCase()
       frequencies[d] = (frequencies[d] || 0) + 1
     sorted = _.sortBy _.keys(frequencies), (k) -> frequencies[k]
-    words = []
-    for i in [2..2+Math.floor(Math.random() * 4)]
-      words.push sorted[Math.floor(Math.random() * (sorted.length-1))]
+    words = sorted[Math.floor(Math.random() * sorted.length)] for i in [2..2+Math.floor(Math.random() * 4)]
 
   image_url: (size=null) ->
     image_id = @data.primary_image_id
@@ -31,3 +28,6 @@ class @Art
     console.log("searching")
     search_uri = "#{@SEARCH_URI}?term=#{term}"
     $.get search_uri, (data) -> callback(new Art(i) for i in data)
+
+  text: -> [ @data.physical_description, @data.materials_techniques, @.descriptive_line, @.history_note ].join()
+
