@@ -13,7 +13,7 @@ class window.MusicSearch
 
   handleResponse : (resp) =>
     $('#results').html('')
-    _.each resp, (o) ->
+    _.each resp, (o) =>
       name = o.name
       artist = o.artist
       lyrics = o.lyrics
@@ -23,7 +23,7 @@ class window.MusicSearch
         content :
           types : "Track"
           query : """#{name} #{artist}"""
-        success : (response) ->
+        success : (response) =>
           result = response.result.results[0]
           html = $ """
           <div class="music">
@@ -36,6 +36,8 @@ class window.MusicSearch
             </div>
           </div>
             """
+          _.each @words.split(" "), (w) -> html.highlight(w)
+          console.log @words
           html.click ->
             R.player.play source: result.key
           $('#results').append(html)

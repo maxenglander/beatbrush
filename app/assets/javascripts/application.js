@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require jquery.highlight-4
 //= require_tree .
