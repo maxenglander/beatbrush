@@ -1,4 +1,4 @@
-Beatbrushtest::Application.routes.draw do
+BeatBrush::Application.routes.draw do
   root to: 'pages#home'
 
   get 'music/lyrics', to: 'music#lyrics'

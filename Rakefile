@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Beatbrushtest::Application.load_tasks
+BeatBrush::Application.load_tasks
