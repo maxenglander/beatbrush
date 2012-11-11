@@ -9,6 +9,22 @@ class Gracenote
     "264393647426601194-B80204C66DA0F70D294B57C66F9206EB"
   end
 
+  def self.fetch_lyrics(gr_id)
+    conn = Faraday.new(:url => api_url) do |f|
+      f.request  :url_encoded
+      f.response :logger
+      f.adapter  Faraday.default_adapter
+    end
+
+    response = conn.post(api_path) do |req|
+      req.body = query_track_lyrics(gr_id)
+    end
+
+    doc = Nokogiri::XML(response.body)
+
+    lyrics = doc.xpath('//LYRIC/BLOCK').map { |l| l.content }.join("\n")
+  end
+
   def self.query(words)
     all_tracks = []
     3.times do |n|
@@ -27,14 +43,15 @@ class Gracenote
       considered = {}
       tracks = doc.xpath('//RESPONSE/LYRIC').map do |lyric|
         name = lyric.xpath('//TITLE').first.content
+        gr_id = lyric.xpath('//GN_ID').first.content
         count = lyric.xpath('//RANGE/COUNT').first.content
-        p count
         if !considered[name]
           considered[name] = name
           {
             name: name,
             artist: lyric.xpath('//ARTIST').first.content, 
             lyrics: lyric.xpath('//LYRIC_SAMPLE').first.content, 
+            gr_id: gr_id,
             context: words
           }
         else
@@ -62,6 +79,21 @@ class Gracenote
       <START>#{start}</START>
       <END>#{start + 2}</END>
     </RANGE>
+  </QUERY>
+</QUERIES>
+XML
+  end
+
+  def self.query_track_lyrics(gr_id)
+    return <<XML
+<QUERIES>
+  <LANG>eng</LANG>
+  <AUTH>
+    <CLIENT>#{client_id}</CLIENT>
+    <USER>#{user_id}</USER>
+  </AUTH>
+  <QUERY CMD="LYRIC_FETCH">
+    <GN_ID>#{gr_id}</GN_ID>
   </QUERY>
 </QUERIES>
 XML

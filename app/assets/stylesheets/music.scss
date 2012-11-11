@@ -21,3 +21,25 @@
 }
 
 .highlight { background-color: yellow; }
+
+#search {
+  margin: 0 auto;
+  width: 400px;
+  margin-top: 200px;
+  text-align: center;
+  h1 {
+    font-size: 1.0em;
+    text-transform: uppercase;
+    font-family: verdana;
+    letter-spacing: 0.1em;
+  }
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+    margin: 0 auto;
+  }
+  input[type="submit"] {
+    display: none;
+  }
+}

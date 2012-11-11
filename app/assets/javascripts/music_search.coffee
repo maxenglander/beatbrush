@@ -13,37 +13,14 @@ class window.MusicSearch
 
   handleResponse : (resp) =>
     $('#results').html('')
+    $('#search').fadeOut()
     _.each resp, (o) =>
-      name = o.name
-      artist = o.artist
-      lyrics = o.lyrics
+      track = new Track(o.name, o.artist, o.lyrics, o.gr_id, @words)
+      $('#results').append(track.el)
+      track.loadRdio ->
+        track.el.click ->
+          $('#results .music').not(track.el).fadeOut -> $(@).remove()
 
-      R.request
-        method : "search"
-        content :
-          types : "Track"
-          query : """#{name} #{artist}"""
-        success : (response) =>
-          result = response.result.results[0]
-          html = $ """
-          <div class="music">
-            <div class="image">
-              <img src="#{result.icon}">
-            </div>
-            <div class="data">
-              <p>#{result.name}<br><strong>#{result.artist}</strong></p>
-              <p class="lyrics">#{lyrics}</p>"
-            </div>
-          </div>
-            """
-          _.each @words.split(" "), (w) -> html.highlight(w)
-          console.log @words
-          html.click ->
-            R.player.play source: result.key
-          $('#results').append(html)
-          true
-        error : (response) ->
-          console.log('error')
 
 
   handleError : (resp) =>
