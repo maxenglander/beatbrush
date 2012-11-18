@@ -1,6 +1,6 @@
 class @Search
 
-  constructor : (@r) ->
+  constructor : (@rdio, @musicSearcher) ->
     $("header").hide()
     @el = $ """<form id="start_search">
       <h1>Beat. Brush.</h1>
@@ -11,11 +11,12 @@ class @Search
     @el.hide()
 
   footer : ->
-    if @r.authenticated()
+    if @rdio.authenticated()
       $("")
     else
+      rdio = @rdio
       $("<p class='signup'><a href=#>Authenticate with RDio</a> for full tracks.</p>").click ->
-        r.authenticate()
+        rdio.authenticate()
         $(@).fadeOut()
 
   init : ->
@@ -25,17 +26,27 @@ class @Search
       $('#music').html('')
       @el.fadeIn()
       $('header').fadeOut()
-    @r.ready =>
-      @el.append(@footer())
-      @el.fadeIn().submit (e) =>
-        @el.find('.status').html('')
-        terms = $('#musicSearch').val()
-        search = new MusicSearch(terms)
-        search.search (results) =>
-          if _.any?(results)
-            @el.fadeOut()
-            $('header').fadeIn()
-          else
-            @el.find('.status').html('No results found.')
-        e.preventDefault()
-        false
+    @el.append(@footer())
+    @el.fadeIn().submit @submit
+
+  getTerms : ->
+    $('#musicSearch', @el).val()
+
+  clearStatus : -> @setStatus('')
+
+  setStatus : (text) -> @el.find('.status').html(text)
+
+  toggleOff : ->
+    @el.fadeOut()
+    $('header').fadeIn()
+
+  submit : (e) =>
+    @clearStatus()
+    search = new @musicSearcher(@getTerms())
+    search.search (results) =>
+      if _.any?(results)
+        @toggleOff()
+      else
+        @setStatus('No results found.')
+    e.preventDefault()
+    false

@@ -1,6 +1,7 @@
 $ ->
 
   if R?
-    window.startSearch = new Search(R)
+    window.startSearch = new Search(R, MusicSearch)
     $('#content').prepend(startSearch.el)
-    startSearch.init()
+    R.ready ->
+      startSearch.init()
