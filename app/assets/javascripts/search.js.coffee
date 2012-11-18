@@ -1,4 +1,4 @@
-class @StartSearch
+class @Search
   constructor : (@r) ->
     $("header").hide()
     @el = $ """<form id="start_search">
