@@ -1,13 +1,5 @@
 describe "Search", ->
 
-  class MusicSearcherStub
-    constructor : (@terms) ->
-    search : (callback) -> callback(@results)
-  
-  class RdioStub
-    authenticated : -> @authenticated
-    authenticate : ->
-
   describe "submit", ->
 
     beforeEach ->
