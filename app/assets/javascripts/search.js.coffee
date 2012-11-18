@@ -1,4 +1,5 @@
 class @Search
+
   constructor : (@r) ->
     $("header").hide()
     @el = $ """<form id="start_search">
@@ -8,8 +9,6 @@ class @Search
         <p class="status"></p>
       </form>"""
     @el.hide()
-
-  el : -> @el
 
   footer : ->
     if @r.authenticated()
