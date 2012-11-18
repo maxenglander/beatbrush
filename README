@@ -1,0 +1,8 @@
+BeatBrush
+
+Tests
+-----
+
+Running JavaScript tests:
+
+$ bundle exec jasmine-headless-webkit --color
