@@ -1,5 +1,5 @@
 class @StartSearch
-  constructor : ->
+  constructor : (@r) ->
     $("header").hide()
     @el = $ """<form id="start_search">
       <h1>Beat. Brush.</h1>
@@ -12,11 +12,11 @@ class @StartSearch
   el : -> @el
 
   footer : ->
-    if R.authenticated()
+    if @r.authenticated()
       $("")
     else
       $("<p class='signup'><a href=#>Authenticate with RDio</a> for full tracks.</p>").click ->
-        R.authenticate()
+        r.authenticate()
         $(@).fadeOut()
 
   init : ->
@@ -26,7 +26,7 @@ class @StartSearch
       $('#music').html('')
       @el.fadeIn()
       $('header').fadeOut()
-    R.ready =>
+    @r.ready =>
       @el.append(@footer())
       @el.fadeIn().submit (e) =>
         @el.find('.status').html('')

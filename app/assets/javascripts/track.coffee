@@ -1,9 +1,10 @@
 $ ->
-  R.ready ->
-    R.player.on "change:playState", (state) ->
-      console.log("Play state changed to #{state}")
-      if state is R.player.PLAYSTATE_STOPPED
-        $('header button#beat').click()
+  if R?
+    R.ready ->
+      R.player.on "change:playState", (state) ->
+        console.log("Play state changed to #{state}")
+        if state is R.player.PLAYSTATE_STOPPED
+          $('header button#beat').click()
   $("body").on "click", "#brush", -> 
     if Utility.current_track?
       Utility.current_track.findInterestingWord()
