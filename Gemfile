@@ -12,6 +12,8 @@ gem 'pg'
 
 group :development, :test do
   gem 'jasmine-rails'
+  gem 'rspec-rails'
+  gem 'vcr'
 end
 
 
