@@ -3,9 +3,11 @@ BeatBrush
 Tests
 -----
 
-Requires `qt` to be installed for headless JS testing.
+Jasmine:
+$ rake jasmine:headless
+
+RSpec:
+$ rake spec
+
+Note: Jasmine requires `qt` to be installed for headless JS testing.
 Read more: https://github.com/searls/jasmine-rails
-
-Running JavaScript tests:
-
-$ bundle exec jasmine-headless-webkit --color
