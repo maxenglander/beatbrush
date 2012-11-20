@@ -5,7 +5,7 @@ class Gracenote
   def self.fetch_lyrics(gr_id)
     conn = Faraday.new(:url => api_url) do |f|
       f.request  :url_encoded
-      f.response :logger
+      # f.response :logger
       f.adapter  Faraday.default_adapter
     end
 
@@ -21,10 +21,10 @@ class Gracenote
   def self.query(words)
     all_tracks = []
     3.times do |n|
-      p "REQUEST"
+      # p "REQUEST"
       conn = Faraday.new(:url => api_url) do |f|
         f.request  :url_encoded
-        f.response :logger
+        # f.response :logger
         f.adapter  Faraday.default_adapter
       end
 

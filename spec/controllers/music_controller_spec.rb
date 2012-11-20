@@ -19,10 +19,10 @@ describe MusicController do
 
   describe 'GET search' do
     let(:results) { ['some','json','results...'] }
-    before { Gracenote.stub(:query) { results } }
+    before { Lyricsnmusic.stub(:query) { results } }
 
     it 'should query Gracenote' do
-      Gracenote.should_receive(:query).with(["one", "two", "three"])
+      Lyricsnmusic.should_receive(:query).with(["one", "two", "three"])
       get :search, words: "one two three", format: :js
       response.should be_success
     end

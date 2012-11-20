@@ -18,6 +18,7 @@ describe Gracenote do
 
     it "returns three tracks with a word we're looking for" do
       tracks = Gracenote.query(["hat"])
+      tracks.length.should eq(3)
       tracks.each do |t|
         t[:lyrics].should match(/\bhat\b/)
         [:name, :artist, :lyrics, :gr_id, :context].each do |s|
