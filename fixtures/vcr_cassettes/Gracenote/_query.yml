@@ -1,0 +1,351 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://c3206144.web.cddbp.net/webapi/xml/1.0/
+    body:
+      encoding: US-ASCII
+      string: ! "<QUERIES>\n  <LANG>eng</LANG>\n  <AUTH>\n    <CLIENT>3206144-286C181EC38AC3D49148BC143405E50A</CLIENT>\n
+        \   <USER>264393647426601194-B80204C66DA0F70D294B57C66F9206EB</USER>\n  </AUTH>\n
+        \ <QUERY CMD=\"LYRIC_SEARCH\">\n    <TEXT TYPE=\"LYRIC_FRAGMENT\">hat</TEXT>\n
+        \   <RANGE>\n      <START>15</START>\n      <END>17</END>\n    </RANGE>\n
+        \ </QUERY>\n</QUERIES>\n"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 20 Nov 2012 12:49:44 GMT
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.9
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '5468'
+      Content-Type:
+      - text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "\n<RESPONSES>\n <RESPONSE STATUS=\"OK\">\n   <RANGE>\n      <COUNT>4053</COUNT>\n
+        \     <START>15</START>\n      <END>17</END>\n   </RANGE>\n   <LYRIC ORD=\"1\">\n
+        \     <GN_ID>117639196-BFFF2BA7645797BF1F52A483C0B7C07E</GN_ID>\n      <TITLE>Mellowship
+        Slinky In B Major</TITLE>\n      <ARTIST>Red Hot Chili Peppers</ARTIST>\n
+        \     <CONTRIBUTOR>\n         <NAME>BALZARY, MICHAEL &apos;FLEA&apos;</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>SMITH, CHAD GAYLORD</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>KIEDIS,
+        ANTHONY</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>FRUSCIANTE, JOHN</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>MOEBETOBLAME
+        MUSIC</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <LYRIC_SAMPLE>\n         <LINE ORD=\"1\">Being that I&apos;m the duke
+        of my domain</LINE>\n         <LINE ORD=\"2\">My hat goes off to Mark Twain</LINE>\n
+        \        <LINE ORD=\"3\">Singing a song about what true men don&apos;t do</LINE>\n
+        \        <LINE ORD=\"4\">Killing another creature, that&apos;s kind of blue</LINE>\n
+        \     </LYRIC_SAMPLE>\n   </LYRIC>\n   <LYRIC ORD=\"2\">\n      <GN_ID>117372910-AC26EE2AB692A1012FA8D3323A3A32C2</GN_ID>\n
+        \     <TITLE>Heat</TITLE>\n      <ARTIST>50 Cent</ARTIST>\n      <CONTRIBUTOR>\n
+        \        <NAME>Mike Elizondo</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>Curtis Jackson</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>Andre Young</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>TOM
+        COSTER JR.</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>STRAWBERRY BLONDE
+        MUSIC</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>50 CENT MUSIC</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>BUG
+        MUSIC</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>BLOTTER MUSIC</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <LYRIC_SAMPLE>\n         <LINE
+        ORD=\"1\">&apos;Cuz my motherfuckin&apos; vest is bulletproof, nigga</LINE>\n
+        \        <LINE ORD=\"2\">&apos;Cuz my motherfuckin&apos; hat is bulletproof,
+        nigga</LINE>\n         <LINE ORD=\"3\">But the doc said if I get hit I might
+        get a fuckin&apos; concussion</LINE>\n         <LINE ORD=\"4\">Better that
+        then a hole in the head, right nigga</LINE>\n      </LYRIC_SAMPLE>\n   </LYRIC>\n
+        \  <LYRIC ORD=\"3\">\n      <GN_ID>117414178-2E143E39EABF6BDA03386EDC60585E8E</GN_ID>\n
+        \     <TITLE>What Up Gangsta</TITLE>\n      <ARTIST>50 Cent</ARTIST>\n      <CONTRIBUTOR>\n
+        \        <NAME>JACKSON, CURTIS</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>TEWLOW, ROB</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>UNIVERSAL MUSIC CORPORATION</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>TERMINALLY
+        ILL MUSIC</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <LYRIC_SAMPLE>\n         <LINE ORD=\"1\">I&apos;m
+        like Patti Labelle, homie, I&apos;m on my own</LINE>\n         <LINE ORD=\"2\">Where
+        I lay my hat is my home, I&apos;m a Rolling Stone</LINE>\n         <LINE ORD=\"3\">Cross
+        my path I&apos;ll crush ya, thinking I won&apos;t touch ya</LINE>\n         <LINE
+        ORD=\"4\">I&apos;ll have your ass using a wheelchair, cane, or crutches</LINE>\n
+        \     </LYRIC_SAMPLE>\n   </LYRIC>\n </RESPONSE>\n</RESPONSES>\n"
+    http_version: 
+  recorded_at: Tue, 20 Nov 2012 12:49:45 GMT
+- request:
+    method: post
+    uri: https://c3206144.web.cddbp.net/webapi/xml/1.0/
+    body:
+      encoding: US-ASCII
+      string: ! "<QUERIES>\n  <LANG>eng</LANG>\n  <AUTH>\n    <CLIENT>3206144-286C181EC38AC3D49148BC143405E50A</CLIENT>\n
+        \   <USER>264393647426601194-B80204C66DA0F70D294B57C66F9206EB</USER>\n  </AUTH>\n
+        \ <QUERY CMD=\"LYRIC_SEARCH\">\n    <TEXT TYPE=\"LYRIC_FRAGMENT\">hat</TEXT>\n
+        \   <RANGE>\n      <START>30</START>\n      <END>32</END>\n    </RANGE>\n
+        \ </QUERY>\n</QUERIES>\n"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 20 Nov 2012 12:49:45 GMT
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.9
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '4514'
+      Content-Type:
+      - text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "\n<RESPONSES>\n <RESPONSE STATUS=\"OK\">\n   <RANGE>\n      <COUNT>4053</COUNT>\n
+        \     <START>30</START>\n      <END>32</END>\n   </RANGE>\n   <LYRIC ORD=\"1\">\n
+        \     <GN_ID>117501063-083404499F22156C8089FC04C4082AEC</GN_ID>\n      <TITLE>Kody</TITLE>\n
+        \     <ARTIST>Matchbox Twenty</ARTIST>\n      <CONTRIBUTOR>\n         <NAME>THOMAS,
+        ROBERT KELLY</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>EMI BLACKWOOD MUSIC
+        INC.</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>BIDNIS INC.</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <LYRIC_SAMPLE>\n         <LINE
+        ORD=\"1\">Now it was clear to all of us</LINE>\n         <LINE ORD=\"2\">We
+        kept this hat of broken dreams</LINE>\n         <LINE ORD=\"3\">And we pulled
+        them out and when we needed them around</LINE>\n         <LINE ORD=\"4\">So
+        please hand me the bottle</LINE>\n      </LYRIC_SAMPLE>\n   </LYRIC>\n   <LYRIC
+        ORD=\"2\">\n      <GN_ID>117503939-1DAC38DA5D2030526B14ACC40369CDD7</GN_ID>\n
+        \     <TITLE>The Sidewinder Sleeps Tonite</TITLE>\n      <ARTIST>R.E.M.</ARTIST>\n
+        \     <CONTRIBUTOR>\n         <NAME>BUCK, PETER</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>MILLS,
+        MICHAEL</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>BERRY, WILLIAM</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>STIPE,
+        MICHAEL</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>WARNER-TAMERLANE PUBLISHING CORP.</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>NIGHT GARDEN MUSIC</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <LYRIC_SAMPLE>\n         <LINE
+        ORD=\"1\">Call me when you try to wake her up, call me when you try to wake
+        her</LINE>\n         <LINE ORD=\"2\">The cat in the hat came back, wrecked
+        a lot of havoc on the way</LINE>\n         <LINE ORD=\"3\">Always had a smile
+        and a reason to pretend</LINE>\n         <LINE ORD=\"4\">But their world has
+        flat backgrounds and little need to sleep but to dream</LINE>\n      </LYRIC_SAMPLE>\n
+        \  </LYRIC>\n   <LYRIC ORD=\"3\">\n      <GN_ID>117447899-FE7E3FDF60A627E4E7BD210FB4A561E7</GN_ID>\n
+        \     <TITLE>No Such Thing</TITLE>\n      <ARTIST>John Mayer</ARTIST>\n      <CONTRIBUTOR>\n
+        \        <NAME>MAYER, JOHN CLAYTON</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>COOK, DOUGLAS CLAY</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>SPECIFIC HARM MUSIC</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>ME
+        HOLD YOU MUSIC</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <LYRIC_SAMPLE>\n         <LINE ORD=\"1\">Take
+        the so called right track</LINE>\n         <LINE ORD=\"2\">Faded white hats</LINE>\n
+        \        <LINE ORD=\"3\">Grabbing credits and maybe transfers</LINE>\n         <LINE
+        ORD=\"4\">They read all the books but they can&apos;t find the answers</LINE>\n
+        \     </LYRIC_SAMPLE>\n   </LYRIC>\n </RESPONSE>\n</RESPONSES>\n"
+    http_version: 
+  recorded_at: Tue, 20 Nov 2012 12:49:46 GMT
+- request:
+    method: post
+    uri: https://c3206144.web.cddbp.net/webapi/xml/1.0/
+    body:
+      encoding: US-ASCII
+      string: ! "<QUERIES>\n  <LANG>eng</LANG>\n  <AUTH>\n    <CLIENT>3206144-286C181EC38AC3D49148BC143405E50A</CLIENT>\n
+        \   <USER>264393647426601194-B80204C66DA0F70D294B57C66F9206EB</USER>\n  </AUTH>\n
+        \ <QUERY CMD=\"LYRIC_SEARCH\">\n    <TEXT TYPE=\"LYRIC_FRAGMENT\">hat</TEXT>\n
+        \   <RANGE>\n      <START>45</START>\n      <END>47</END>\n    </RANGE>\n
+        \ </QUERY>\n</QUERIES>\n"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 20 Nov 2012 12:49:46 GMT
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.9
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "\n<RESPONSES>\n <RESPONSE STATUS=\"OK\">\n   <RANGE>\n      <COUNT>4053</COUNT>\n
+        \     <START>45</START>\n      <END>47</END>\n   </RANGE>\n   <LYRIC ORD=\"1\">\n
+        \     <GN_ID>117625674-2647C9E232CF47B2BEDD81604819D44B</GN_ID>\n      <TITLE>99
+        Problems (Produced By Rick Rubin)</TITLE>\n      <ARTIST>Jay-Z</ARTIST>\n
+        \     <CONTRIBUTOR>\n         <NAME>RUBIN, RICK</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>WEINSTEIN,
+        LESLIE</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>PAPPALARDI, FELIX</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>SQUIER,
+        BILLY</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>CARTER, SHAWN</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>VENTURA,
+        JOHN ELIAS</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>HENDERSON, ALPHONSO</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>MARROW, TRACY LAUREN</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>LANDSBERG,
+        NORMAN</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>WB MUSIC CORP.</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>BRIDGEPORT
+        MUSIC, INC.</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>AMMO DUMP</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>UNIVERSAL-POLYGRAM INTERNATIONAL PUBLISHING,
+        INC.</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>UNIVERSAL MUSIC-MGB SONGS</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>CARRUMBA
+        MUSIC</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>RHYME SYNDICATE MUSIC (*UNIVERSAL*)</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>UNIVERSAL MUSIC-CAREERS</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <LYRIC_SAMPLE>\n         <LINE
+        ORD=\"1\">Son do you know why I&apos;m stoppin&apos; you for?</LINE>\n         <LINE
+        ORD=\"2\">&apos;Cause I&apos;m young and I&apos;m black and my hat&apos;s
+        real low</LINE>\n         <LINE ORD=\"3\">Or do I look like a mind reader
+        sir? I don&apos;t know</LINE>\n         <LINE ORD=\"4\">Am I under arrest
+        or should I guess some mo&apos;?</LINE>\n      </LYRIC_SAMPLE>\n   </LYRIC>\n
+        \  <LYRIC ORD=\"2\">\n      <GN_ID>145730764-959E5E8559FDDC807DE7EC307C567E43</GN_ID>\n
+        \     <TITLE>Blue Magic</TITLE>\n      <ARTIST>Jay-Z</ARTIST>\n      <CONTRIBUTOR>\n
+        \        <NAME>WILLIAMS, PHARRELL</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>FOSTER, DENZIL DELANO</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>KAUN, BERNHARD</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>BRAGGS,
+        CINDY ANN</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>CARTER, SHAWN</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>ROBINSON, DAWN SHERRICE</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>JONES,
+        MAXINE</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>MC ELROY, THOMAS DERRICK</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>ELLIS,
+        TERRY</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>TWO TUFF ENUFF PUBLISHING</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>CARTER
+        BOYS MUSIC</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>USI A MUSIC PUBLISHING</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>WATERS OF NAZARETH PUBLISHING</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <LYRIC_SAMPLE>\n         <LINE ORD=\"1\">Cherry M3s with the top back</LINE>\n
+        \        <LINE ORD=\"2\">Red and green G&apos;s all on my hat</LINE>\n         <LINE
+        ORD=\"3\">North Beach leathers, matchin&apos; Gucci sweater</LINE>\n         <LINE
+        ORD=\"4\">Gucci sneaks on to keep my outfit together</LINE>\n      </LYRIC_SAMPLE>\n
+        \  </LYRIC>\n   <LYRIC ORD=\"3\">\n      <GN_ID>193128942-E81C0846E96237838E985381D4D894B3</GN_ID>\n
+        \     <TITLE>Off That</TITLE>\n      <ARTIST>Jay-Z</ARTIST>\n      <CONTRIBUTOR>\n
+        \        <NAME>MOSLEY, TIMOTHY</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>CARTER, SHAWN</NAME>\n
+        \        <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>GRAHAM, AUBREY</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>HARMON,
+        LESLIE JEROME</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE
+        MEDIASPACE=\"MUSIC\" ID=\"6\">Lyricist</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n
+        \     </CONTRIBUTOR>\n      <CONTRIBUTOR>\n         <NAME>AUBREY GRAHAM PUBL
+        DESIGNEE</NAME>\n         <CONTRIBUTION>\n            <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\"
+        ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n         </CONTRIBUTION>\n      </CONTRIBUTOR>\n
+        \     <CONTRIBUTOR>\n         <NAME>CARTER BOYS MUSIC</NAME>\n         <CONTRIBUTION>\n
+        \           <CONTRIBUTION_TYPE MEDIASPACE=\"MUSIC\" ID=\"7\">Publisher</CONTRIBUTION_TYPE>\n
+        \        </CONTRIBUTION>\n      </CONTRIBUTOR>\n      <LYRIC_SAMPLE>\n         <LINE
+        ORD=\"1\">Uh, we ain&apos;t trippin&apos; off that</LINE>\n         <LINE
+        ORD=\"2\">This a Benetton hat, nigga been up off that, uh</LINE>\n         <LINE
+        ORD=\"3\">Whatever you about to discover we off that</LINE>\n         <LINE
+        ORD=\"4\">You about to tell her you love her we off that</LINE>\n      </LYRIC_SAMPLE>\n
+        \  </LYRIC>\n </RESPONSE>\n</RESPONSES>\n"
+    http_version: 
+  recorded_at: Tue, 20 Nov 2012 12:49:48 GMT
+recorded_with: VCR 2.3.0
