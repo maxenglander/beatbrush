@@ -1,13 +1,6 @@
 class Gracenote
-  KEY="3206144-286C181EC38AC3D49148BC143405E50A"
-
-  def self.client_id
-    KEY
-  end
-
-  def self.user_id
-    "264393647426601194-B80204C66DA0F70D294B57C66F9206EB"
-  end
+  CLIENT_ID="3206144-286C181EC38AC3D49148BC143405E50A"
+  USER_ID="264393647426601194-B80204C66DA0F70D294B57C66F9206EB"
 
   def self.fetch_lyrics(gr_id)
     conn = Faraday.new(:url => api_url) do |f|
@@ -70,8 +63,8 @@ class Gracenote
 <QUERIES>
   <LANG>eng</LANG>
   <AUTH>
-    <CLIENT>#{client_id}</CLIENT>
-    <USER>#{user_id}</USER>
+    <CLIENT>#{CLIENT_ID}</CLIENT>
+    <USER>#{USER_ID}</USER>
   </AUTH>
   <QUERY CMD="LYRIC_SEARCH">
     <TEXT TYPE="LYRIC_FRAGMENT">#{phrase}</TEXT>
@@ -89,8 +82,8 @@ XML
 <QUERIES>
   <LANG>eng</LANG>
   <AUTH>
-    <CLIENT>#{client_id}</CLIENT>
-    <USER>#{user_id}</USER>
+    <CLIENT>#{CLIENT_ID}</CLIENT>
+    <USER>#{USER_ID}</USER>
   </AUTH>
   <QUERY CMD="LYRIC_FETCH">
     <GN_ID>#{gr_id}</GN_ID>
@@ -100,7 +93,8 @@ XML
   end
 
   def self.api_url
-    short_uid = KEY.slice(0, KEY.index('-'))
+    id = CLIENT_ID
+    short_uid = id.slice(0, id.index('-'))
     "https://c#{short_uid}.web.cddbp.net/"
   end
 
