@@ -38,21 +38,28 @@ class @Track
     this
 
   getFullLyrics : ->
-    $.ajax
-      url: "/music/lyrics"
-      type: "GET"
-      dataType: "JSON"
-      data:
-        gr_id: @gr_id
-      success: (resp) =>
-        Utility.current_track = @
+    success = (resp) =>
+      Utility.current_track = @
+      if resp?
         @full_lyrics = resp.lyrics
-        @render()
-        @el.addClass('withFullLyrics')
-        _.each @search_words.split(" "), (w) =>
-          if @full_lyrics.toLowerCase().indexOf(w.toLowerCase()) >= 0
-            @searchArt(w)
-        R.player.play source: @key
+      else
+        @full_lyrics = @lyric_snippet
+      @render()
+      @el.addClass('withFullLyrics')
+      _.each @search_words.split(" "), (w) =>
+        if @full_lyrics.toLowerCase().indexOf(w.toLowerCase()) >= 0
+          @searchArt(w)
+      R.player.play source: @key
+    if !@gr_id?
+      success()
+    else
+      $.ajax
+        url: "/music/lyrics"
+        type: "GET"
+        dataType: "JSON"
+        data:
+          gr_id: @gr_id
+        success: success
 
   setupClickHandler : ->
 
