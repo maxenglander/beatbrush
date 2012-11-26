@@ -5,9 +5,6 @@ $ ->
         console.log("Play state changed to #{state}")
         if state is R.player.PLAYSTATE_STOPPED
           $('header button#beat').click()
-  $("body").on "click", "#brush", -> 
-    if Utility.current_track?
-      Utility.current_track.findInterestingWord()
 
 
 class @Track
@@ -93,6 +90,7 @@ class @Track
     word = last[Math.floor(Math.random() * last.length)]
     $('.lyrics').removeHighlight()
     $('.lyrics').highlight(word)
+    word
 
   loadRdio : (fn) ->
     @get('R').request
