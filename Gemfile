@@ -13,6 +13,9 @@ gem 'pg'
 group :development, :test do
   gem 'jasmine-rails'
   gem 'rspec-rails'
+end
+
+group :test do
   gem 'vcr'
   gem 'webmock'
 end
