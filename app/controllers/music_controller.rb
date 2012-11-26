@@ -17,7 +17,7 @@ class MusicController < ApplicationController
     words = params[:words].split(" ")
     respond_to do |format|
       format.js do
-        if resp = Gracenote.query(words)
+        if resp = Lyricsnmusic.query(words)
           render :json => resp
         else
           render :json => {}, :status => :unprocessable_entity

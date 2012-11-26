@@ -1,17 +1,21 @@
 $ ->
-  R.ready ->
-    R.player.on "change:playState", (state) ->
-      console.log("Play state changed to #{state}")
-      if state is R.player.PLAYSTATE_STOPPED
-        $('header button#beat').click()
-  $("body").on "click", "#brush", -> 
-    if Utility.current_track?
-      Utility.current_track.findInterestingWord()
+  if R?
+    R.ready ->
+      R.player.on "change:playState", (state) ->
+        console.log("Play state changed to #{state}")
+        if state is R.player.PLAYSTATE_STOPPED
+          $('header button#beat').click()
 
 
 class @Track
 
-  constructor : (@name, @artist, @lyric_snippet, @gr_id, @search_words) ->
+  constructor : (attrs) ->
+    if attrs?
+      @_attrs = attrs
+    else
+      @_attrs = {}
+    unless @get('R')?
+      @set('R', window.R)
     Utility.current_track = @
     @el = $("""<div class='music'>
       <div class="image"></div>
@@ -20,40 +24,57 @@ class @Track
         <p class="lyrics"></p>
       </div>
       </div>""")
+    @el.data track: @
 
-  get_lyrics : ->
-    if @full_lyrics?
-      @full_lyrics
+  get : (name) ->
+    @_attrs[name]
+
+  set : (name, value) ->
+    @_attrs[name] = value
+
+  lyrics : ->
+    if @get('full_lyrics')?
+      @get('full_lyrics')
     else
-      @lyric_snippet
+      @get('lyric_snippet')
 
   render : =>
-    @el.find('.image').html("""<img src="#{@icon}">""") if @icon?
-    @el.find('.name').html("""#{@name}<br><strong>#{@artist}</strong>""")
-    @el.find('.lyrics').html("""#{@get_lyrics()}""")
+    @el.find('.image').html("""<img src="#{@get('icon')}">""") if @get('icon')?
+    if @get('artist')? && @get('name')?
+      @el.find('.name').html("""#{@get('name')}<br><strong>#{@get('artist')}</strong>""") 
+    @el.find('.lyrics').html("""#{@lyrics()}""") if @lyrics()?
 
-    _.each @search_words.split(" "), (w) => @el.highlight(w)
+    if @get('search_words')?
+      _.each @get('search_words').split(" "), (w) => @el.highlight(w)
 
     this
 
-  getFullLyrics : ->
-    $.ajax
-      url: "/music/lyrics"
-      type: "GET"
-      dataType: "JSON"
-      data:
-        gr_id: @gr_id
-      success: (resp) =>
-        Utility.current_track = @
-        @full_lyrics = resp.lyrics
-        @render()
-        @el.addClass('withFullLyrics')
-        _.each @search_words.split(" "), (w) =>
-          if @full_lyrics.toLowerCase().indexOf(w.toLowerCase()) >= 0
-            @searchArt(w)
-        R.player.play source: @key
+  # Set this track as the current track.
+  # If gr_id (Gracenote ID) exists, query for
+  # full lyrics.
+  #
+  # Accepts a callback to be called when activated.
+  activate : ->
+    if @get('gr_id')?
+      $.ajax
+        url: "/music/lyrics"
+        type: "GET"
+        dataType: "JSON"
+        data:
+          gr_id: @get('gr_id')
+        success: (resp) =>
+          @set 'full_lyrics', resp.lyrics
+          @_activateCallback()
+    else
+      @_activateCallback()
 
-  setupClickHandler : ->
+  _activateCallback : ->
+    Utility.current_track = @
+    @render()
+    @el.addClass('activated')
+    [r, key] = [@get('R'), @get('key')]
+    r.player.play source: key if r? and key?
+    @el.trigger('activated')
 
   findInterestingWord : ->
     lyrics = @el.find('.lyrics').text()
@@ -69,44 +90,23 @@ class @Track
     word = last[Math.floor(Math.random() * last.length)]
     $('.lyrics').removeHighlight()
     $('.lyrics').highlight(word)
-    @searchArt(word)
-
-  searchArt : (word) ->
-    Art.search word, (arts) ->
-      $("body").off "click", "#beat"
-      $("body").on "click", "#beat", ->
-        if arts[0]?
-          words = arts[0].find_interesting_words()
-          ms = new MusicSearch(words)
-          ms.searchAndPlay()
-        else
-          $('header .notice').show().text("No dice. Try brush.")
-          $('header button').one 'click', ->
-            $('header .notice').fadeOut()
-      if arts[0]?
-        image = "<img src='#{arts[0].image_url(Art.SIZE_355)}' />"
-        meta = arts[0].text().join("<br/><br/>")
-        if arts[0].data.term_contexts?
-          meta = meta.concat("<br/><br/>").concat(arts[0].data.term_contexts.join("; "))
-        $('#art').html("<div>#{image}<p style='max-width:355px;'>#{meta}</p></div>").highlight(word)
-      else
-        $('#art').html("""<p>No art.</p>""")
+    word
 
   loadRdio : (fn) ->
-    R.request
+    @get('R').request
       method : "search"
       content :
         types : "Track"
-        query : """#{@name} #{@artist}"""
+        query : """#{@get('name')} #{@get('artist')}"""
       success : (response) =>
         result = response.result.results[0]
-        @name = result.name
-        @artist = result.artist
-        @icon = result.icon
-        @key = result.key
+        @set 'name', result.name
+        @set 'artist', result.artist
+        @set 'icon', result.icon
+        @set 'key', result.key
         @render()
         @el.one 'click', =>
-          @getFullLyrics()
+          @activate()
         fn.apply(this)
         true
 
