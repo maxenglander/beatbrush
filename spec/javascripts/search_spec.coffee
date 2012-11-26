@@ -7,7 +7,7 @@ describe "Search", ->
 
     it "should clear status", ->
       class Stub
-        search : ->
+        searchAndPlay : ->
       search = new Search({}, Stub)
       spyOn(search, 'clearStatus')
       search.submit(@e)
@@ -18,7 +18,7 @@ describe "Search", ->
       class MusicSearcherSuccessStub
         constructor : (terms) ->
           expect(terms).toBe(theTerms)
-        search : (callback) => callback([1,2])
+        searchAndPlay : (callback) => callback([1,2])
 
       it "should search with the terms, then toggle itself off", ->
         search = new Search({}, MusicSearcherSuccessStub)
@@ -29,7 +29,7 @@ describe "Search", ->
 
     describe "with terms that don't produce results", ->
       class MusicSearcherFailStub
-        search : (callback) => callback([])
+        searchAndPlay : (callback) => callback([])
 
       it "should not toggle off, and set the status to No Results Found", ->
         search = new Search({}, MusicSearcherFailStub)

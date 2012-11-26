@@ -1,6 +1,10 @@
 #content {
-  width: 990px;
-  margin: 0 auto;
+  #inner-content {
+    min-width: 990px;
+    margin: 0 auto;
+  }
+  min-width: 990px;
+  overflow: hidden;
 }
 .highlight { 
   background-color: hsl(0, 51%, 92%);

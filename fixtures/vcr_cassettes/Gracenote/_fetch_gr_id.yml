@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://c3206144.web.cddbp.net/webapi/xml/1.0/
+    body:
+      encoding: US-ASCII
+      string: ! "<QUERIES>\n  <LANG>eng</LANG>\n  <AUTH>\n    <CLIENT>3206144-286C181EC38AC3D49148BC143405E50A</CLIENT>\n
+        \   <USER>264393647426601194-B80204C66DA0F70D294B57C66F9206EB</USER>\n  </AUTH>\n
+        \ <QUERY CMD=\"ALBUM_SEARCH\">\n    <TEXT TYPE=\"ARTIST\">flying lotus</TEXT>\n
+        \   <TEXT TYPE=\"TRACK_TITLE\">all in</TEXT>\n  </QUERY>\n</QUERIES>\n"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 26 Nov 2012 18:50:57 GMT
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.9
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '1203'
+      Content-Type:
+      - text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "\n<RESPONSES>\n <RESPONSE STATUS=\"OK\">\n   <RANGE>\n      <COUNT>2</COUNT>\n
+        \     <START>1</START>\n      <END>2</END>\n   </RANGE>\n   <ALBUM ORD=\"1\">\n
+        \     <GN_ID>285989015-2071B8373D274F80A743FC03035A8E91</GN_ID>\n      <ARTIST>Flying
+        Lotus</ARTIST>\n      <TITLE>Until The Quiet Comes</TITLE>\n      <DATE>2012</DATE>\n
+        \     <GENRE NUM=\"105251\" ID=\"35497\">Downtempo, Lounge &amp; Ambient</GENRE>\n
+        \     <MATCHED_TRACK_NUM>1</MATCHED_TRACK_NUM>\n      <TRACK_COUNT>18</TRACK_COUNT>\n
+        \     <TRACK>\n         <TRACK_NUM>1</TRACK_NUM>\n         <GN_ID>285989016-0F3AAEEDA9351A79C04ED7B0004C37FF</GN_ID>\n
+        \        <TITLE>All In</TITLE>\n      </TRACK>\n   </ALBUM>\n   <ALBUM ORD=\"2\">\n
+        \     <GN_ID>290247111-B36788D6DABA91F32DF08557F32E7E03</GN_ID>\n      <ARTIST>Flying
+        Lotus</ARTIST>\n      <TITLE>Until The Quiet Comes [Bonus Track]</TITLE>\n
+        \     <DATE>2012</DATE>\n      <GENRE NUM=\"105251\" ID=\"35497\">Downtempo,
+        Lounge &amp; Ambient</GENRE>\n      <MATCHED_TRACK_NUM>1</MATCHED_TRACK_NUM>\n
+        \     <TRACK_COUNT>19</TRACK_COUNT>\n      <TRACK>\n         <TRACK_NUM>1</TRACK_NUM>\n
+        \        <GN_ID>290247112-D03E95082623A8305BC1BCBB18756906</GN_ID>\n         <TITLE>All
+        In</TITLE>\n      </TRACK>\n   </ALBUM>\n </RESPONSE>\n</RESPONSES>\n"
+    http_version: 
+  recorded_at: Mon, 26 Nov 2012 18:50:57 GMT
+recorded_with: VCR 2.3.0

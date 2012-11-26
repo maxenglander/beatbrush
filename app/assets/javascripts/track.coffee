@@ -1,10 +1,20 @@
 $ ->
   if R?
+    hasStarted = false
     R.ready ->
       R.player.on "change:playState", (state) ->
         console.log("Play state changed to #{state}")
         if state is R.player.PLAYSTATE_STOPPED
-          $('header button#beat').click()
+          if hasStarted
+            $('header button#beat').click()
+        hasStarted = true
+  $('#music').bind 'click', '.expand-lyrics', ->
+    lyrics = $(@).find('.lyrics')
+    if lyrics.is(':visible')
+      lyrics.slideUp()
+    else
+      lyrics.slideDown()
+    false
 
 
 class @Track
@@ -21,6 +31,7 @@ class @Track
       <div class="image"></div>
       <div class="data">
         <p class="name"></p>
+        <p class="expand-lyrics"><a href="#">Lyrics</a></p>
         <p class="lyrics"></p>
       </div>
       </div>""")
@@ -55,22 +66,22 @@ class @Track
   #
   # Accepts a callback to be called when activated.
   activate : ->
-    if @get('gr_id')?
-      $.ajax
-        url: "/music/lyrics"
-        type: "GET"
-        dataType: "JSON"
-        data:
-          gr_id: @get('gr_id')
-        success: (resp) =>
-          @set 'full_lyrics', resp.lyrics
-          @_activateCallback()
-    else
-      @_activateCallback()
+    $.ajax
+      url: "/music/lyrics"
+      type: "GET"
+      dataType: "JSON"
+      data:
+        gr_id: @get('gr_id')
+        title: @get('name')
+        artist: @get('artist')
+      success: (resp) =>
+        @set 'full_lyrics', resp.lyrics
+        @el.addClass('withFullLyrics')
+        @el.find('.lyrics').html("""#{@lyrics()}""")
+        @_activateCallback()
 
   _activateCallback : ->
     Utility.current_track = @
-    @render()
     @el.addClass('activated')
     [r, key] = [@get('R'), @get('key')]
     r.player.play source: key if r? and key?

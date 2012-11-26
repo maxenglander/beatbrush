@@ -3,10 +3,14 @@ $ ->
     if Utility.current_track?
       word = Utility.current_track.findInterestingWord()
       Art.search word
-  $('body').on 'activated', '.music', ->
-    track = $(@).data('track')
-    word = track.get('search_words')
-    Art.search word
+      $('#art > div').addClass('slideOut')
+  $("#art").on 'click', '.expand-description', ->
+    desc = $(@).siblings('.description')
+    if desc.is(':visible')
+      desc.slideUp()
+    else
+      desc.slideDown()
+    false
 
 class @Art
   @IMG_ROOT_URL: "http://media.vam.ac.uk/media/thira/collection_images"
@@ -18,11 +22,10 @@ class @Art
   @SEARCH_URI: "/arts/search.json"
 
   @search: (@term) ->
-    console.log('search called with '+term)
+    Utility.setSearchTerm(@term)
     search_uri = "#{@SEARCH_URI}?term=#{term}"
     $.get search_uri, (data) => 
       arts = (new Art(i) for i in data)
-      console.log arts
       @setCollection arts
 
   @beatHandler: ->
@@ -30,6 +33,7 @@ class @Art
       words = @arts[0].find_interesting_words()
       ms = new MusicSearch(words)
       ms.searchAndPlay()
+      $('#music .music').addClass('slideOut')
     else
       $('header .notice').show().text("No dice. Try brush.")
       $('header button').one 'click', ->
@@ -40,11 +44,23 @@ class @Art
     $("body").on "click", "#beat", =>
       @beatHandler()
     if arts[0]?
-      image = "<img src='#{arts[0].image_url(Art.SIZE_355)}' />"
+      image = """
+      <div class="image">
+        <img src='#{arts[0].image_url(Art.SIZE_768)}' />
+      </div>
+        """
       meta = arts[0].text().join("<br/><br/>")
       if arts[0].data.term_contexts?
         meta = meta.concat("<br/><br/>").concat(arts[0].data.term_contexts.join("; "))
-      $('#art').html("<div>#{image}<p style='max-width:355px;'>#{meta}</p></div>").highlight(@term)
+      $('#art').html("""
+        <div class='art'>
+          #{image}
+          <p class="expand-description"><a href="#">Description</a></p>
+          <p class="description">#{meta}</p>
+        </div>"""
+      ).highlight(@term)
+      $('#art').imagesLoaded ->
+        $('.art', @).addClass('imagesLoaded')
     else
       $('#art').html("""<p>No art.</p>""")
 

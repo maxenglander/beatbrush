@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.imagesloaded
 //= require jquery_ujs
 //= require underscore
 //= require jquery.highlight-4

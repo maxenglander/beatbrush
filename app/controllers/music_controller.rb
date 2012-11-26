@@ -1,10 +1,10 @@
 class MusicController < ApplicationController
 
   def lyrics
-    gr_id = params[:gr_id]
+    fetch_params = params.slice(:gr_id, :artist, :title)
     respond_to do |format|
       format.js do
-        if resp = Gracenote.fetch_lyrics(gr_id)
+        if resp = Gracenote.fetch_lyrics(fetch_params)
           render :json => { lyrics: resp }
         else
           render :json => {}, :status => :unprocessable_entity
@@ -17,7 +17,7 @@ class MusicController < ApplicationController
     words = params[:words].split(" ")
     respond_to do |format|
       format.js do
-        if resp = Lyricsnmusic.query(words)
+        if resp = Gracenote.query(words)
           render :json => resp
         else
           render :json => {}, :status => :unprocessable_entity

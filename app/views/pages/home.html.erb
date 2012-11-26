@@ -2,24 +2,28 @@
   <h1 class="header"><button id="beat">Beat.</button><button id="brush">Brush.</button></h1>
   <p class="new-search"><a href=#>New search</a></p>
   <span class="notice"></span>
+  <div id="term">
+  </div>
 </header>
 
 <div id="content">
-  <div id="ajax-loader">
-    <%= image_tag 'ajax-loader.gif' %>
-  </div>
-  <div id="art">
+  <div id="inner-content">
+    <div id="ajax-loader">
+      <%= image_tag 'ajax-loader.gif' %>
+    </div>
+    <div id="art">
 
-  </div>
-  <div id="music">
+    </div>
+    <div id="music">
 
-  </div>
-  <div id="results">
+    </div>
+    <div id="results">
 
-  </div>
-  <form id="music_search" style="display:none;">
-    <h1>Type in something random.</h1>
-    <input type="text" id="musicSearch">
-    <input type="submit">
+    </div>
+    <form id="music_search" style="display:none;">
+      <h1>Type in something random.</h1>
+      <input type="text" id="musicSearch">
+      <input type="submit">
+    </div>
   </div>
 </div>

@@ -29,25 +29,9 @@ describe "Track", ->
         # Ideally would test the parameters passed to $.ajax...
         expect($.ajax).toHaveBeenCalled()
 
-    context "without gracenote id", ->
-      beforeEach ->
-        @track = new Track
-
-      it "should call the lyrics callback with no ajax", ->
-        spyOn(@track, '_activateCallback')
-        spyOn($, 'ajax')
-        @track.activate()
-        expect(@track._activateCallback).toHaveBeenCalled()
-        expect($.ajax).not.toHaveBeenCalled()
-
   describe "_activateCallback", ->
     beforeEach ->
       @track = new Track { gr_id : "1234" }
-
-    it "should call render", ->
-      spyOn(@track, 'render')
-      @track._activateCallback()
-      expect(@track.render).toHaveBeenCalled()
 
     it "should set Utility.current_track", ->
       Utility.current_track = undefined

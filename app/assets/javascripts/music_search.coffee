@@ -2,7 +2,7 @@ class window.MusicSearch
   constructor : (@words) ->
 
   search : (callback) =>
-
+    Utility.setSearchTerm(@words)
     $.ajax
       url: "/music/search"
       data:
@@ -26,8 +26,9 @@ class window.MusicSearch
 
       error: @handleError
 
-  searchAndPlay : =>
+  searchAndPlay : (callback) =>
     @search (tracks) ->
+      callback.call(this, tracks) if callback?
       if tracks.length is 0
         $('header .notice').show().text("No music found. Try again.")
         $('header button').one 'click', ->

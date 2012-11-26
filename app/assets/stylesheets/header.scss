@@ -1,7 +1,7 @@
 header {
-  border-bottom: 1px solid #eee;
   height: 35px;
   width: 100%;
+  margin-bottom: 2em;
   position: relative;
 
   h1 {
@@ -39,5 +39,13 @@ header {
     left: 130px;
     position: relative;
     top: 6px;
+  }
+
+  #term {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 29px;
+    z-index: -10;
   }
 }

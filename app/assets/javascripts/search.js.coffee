@@ -43,15 +43,10 @@ class @Search
   submit : (e) =>
     @clearStatus()
     search = new @musicSearcher(@getTerms())
-    search.search (tracks) =>
+    search.searchAndPlay (tracks) =>
       if _.any?(tracks)
+        Art.search(@getTerms())
         @toggleOff()
-        _.each tracks, (track) ->
-          $('#results').append(track.el)
-          track.loadRdio ->
-            track.el.click ->
-              $('#music').html(track.el)
-              $('#results .music').fadeOut -> $(@).remove()
       else
         @setStatus('No results found.')
     e.preventDefault()

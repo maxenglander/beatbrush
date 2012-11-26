@@ -18,26 +18,56 @@
 }
 
 .music {
-  width: 500px;
   overflow: auto;
   margin: 1em;
-  .image {
-    float: left;
-    padding-right: 10px;
-  }
-  .name { margin-top: 0; }
-  .lyrics { font-style: italic; }
-
-  cursor: pointer;
-  opacity: 0.9;
-  &:hover {
+  -webkit-transition: 0.3s all ease-out;
+  position: relative;
+  opacity: 0.0;
+  left: 100px;;
+  &.activated {
+    left: 0;
     opacity: 1.0;
   }
+  &.slideOut {
+    left: -1000px;
+    opacity: 0;
+  }
+  .image {
+    text-align: center;
+    margin-top: 3em;
+  }
+  .name { 
+    margin-top: 0; 
+    text-align: center;
+    margin: 1em 0;
+  }
+  .lyrics {
+    margin: auto;
+    max-width: 340px;
+    display: none;
+  }
+  .expand-lyrics {
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: 0.2s all ease-in-out;
+    a {
+      color: #555;
+      font-size: 0.9em;
+      text-transform: uppercase;
+    }
+  }
+  &.withFullLyrics {
+    .expand-lyrics {
+      opacity: 1.0;
+    }
+  }
+
+
+
   &.withFullLyrics {
     .name { font-size: 1.2em; }
     .lyrics { font-style: normal; }
     cursor: default;
-    opacity: 1.0;
   }
 }
 
@@ -62,8 +92,4 @@
   input[type="submit"] {
     display: none;
   }
-}
-
-#art {
-  float: right;
 }
