@@ -116,8 +116,6 @@ class @Track
         @set 'icon', result.icon
         @set 'key', result.key
         @render()
-        @el.one 'click', =>
-          @activate()
         fn.apply(this)
         true
 
