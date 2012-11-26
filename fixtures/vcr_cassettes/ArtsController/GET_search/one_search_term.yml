@@ -1,0 +1,233 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.vam.ac.uk/api/json/museumobject/search?images=1&limit=1&q=mango
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.2.3
+      Date:
+      - Mon, 26 Nov 2012 16:09:50 GMT
+      Content-Type:
+      - text/javascript; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      X-Ua-Compatible:
+      - IE=8
+    body:
+      encoding: US-ASCII
+      string: ! "{ \"meta\": {\n        \"result_count\":25 ,\n        \"cluster_counts\"
+        : {}, \n        \"clusters\" : [] , \n        \"group_details\": [] },\n  \"records\":
+        [\n    {\n        \"pk\": 15553, \n        \"model\": \"collection.museumobject\",
+        \n        \"fields\": {\n            \"primary_image_id\": \"2006AH4468\",
+        \n            \"rights\": 3, \n            \"year_start\": 1825, \n            \"object_number\":
+        \"O81756\", \n            \"artist\": \"Unknown\", \n            \"museum_number\":
+        \"IS.245-1952\", \n            \"object\": \"Painting\", \n            \"longitude\":
+        \"75.64340000\", \n            \"last_processed\": \"2012-11-15 17:46:42\",
+        \n            \"event_text\": \"\", \n            \"place\": \"Bundi\", \n
+        \           \"location\": \"In Storage\", \n            \"last_checked\":
+        \"2012-11-15 17:46:42\", \n            \"museum_number_token\": \"is2451952\",
+        \n            \"latitude\": \"25.42801000\", \n            \"title\": \"A
+        man hurling stones at a mango tree; A man hurling stones at a mango tree.\",
+        \n            \"date_text\": \"mid 19th century (made)\", \n            \"slug\":
+        \"a-man-hurling-stones-at-painting-unknown\", \n            \"sys_updated\":
+        \"2012-02-10 00:00:00\", \n            \"collection_code\": \"IND\"\n        }\n
+        \   }\n] }"
+    http_version: 
+  recorded_at: Mon, 26 Nov 2012 16:09:50 GMT
+- request:
+    method: get
+    uri: http://www.vam.ac.uk/api/json/museumobject/O81756
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.2.3
+      Date:
+      - Mon, 26 Nov 2012 16:09:50 GMT
+      Content-Type:
+      - text/javascript; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Expires:
+      - Mon, 10 Dec 2012 16:09:50 GMT
+      Last-Modified:
+      - Mon, 26 Nov 2012 16:09:50 GMT
+      Etag:
+      - ! '"c478b47a7c4302cab6b75d1fa69ed224"'
+      Cache-Control:
+      - max-age=1209600
+      X-Ua-Compatible:
+      - IE=8
+    body:
+      encoding: US-ASCII
+      string: ! "[\n    {\n        \"pk\": 15553, \n        \"model\": \"collection.museumobject\",
+        \n        \"fields\": {\n            \"original_price\": \"\", \n            \"attributions_note\":
+        \"\", \n            \"related_museum_numbers\": \"\", \n            \"museum_number\":
+        \"IS.245-1952\", \n            \"date_end\": \"1875-12-31\", \n            \"labels\":
+        [], \n            \"descriptive_line\": \"Painting of a man throwing stones
+        at a mango tree to bring down fruit, made in Bundi, mid 19th century\", \n
+        \           \"shape\": \"\", \n            \"longitude\": \"75.64340000\",
+        \n            \"year_start\": 1825, \n            \"exhibitions\": [], \n
+        \           \"subjects\": [\n                {\n                    \"pk\":
+        2494, \n                    \"model\": \"collection.subject\", \n                    \"fields\":
+        {\n                        \"name\": \"Mango trees\", \n                        \"museumobject_count\":
+        1, \n                        \"source\": \"object\", \n                        \"cis_id\":
+        \"x31499\", \n                        \"museumobject_image_count\": 1, \n
+        \                       \"type\": \"\", \n                        \"slug\":
+        \"mango-trees\"\n                    }\n                }\n            ],
+        \n            \"date_text\": \"mid 19th century (made)\", \n            \"primary_image_id\":
+        \"2006AH4468\", \n            \"rights\": 3, \n            \"physical_description\":
+        \"A man in a red robe is standing about to hurl a stone at a mango tree laden
+        with fruit. Some mangoes already lie on the ground beneath the tree.\", \n
+        \           \"dimensions\": \"\", \n            \"title\": \"A man hurling
+        stones at a mango tree; A man hurling stones at a mango tree.\", \n            \"date_start\":
+        \"1825-01-01\", \n            \"materials_techniques\": \"Opaque watercolour
+        on paper\", \n            \"last_processed\": \"2012-11-15 17:46:42\", \n
+        \           \"label\": \"\", \n            \"event_text\": \"\", \n            \"production_type\":
+        \"\", \n            \"collections\": [\n                {\n                    \"pk\":
+        11, \n                    \"model\": \"collection.collection\", \n                    \"fields\":
+        {\n                        \"code\": \"IND\", \n                        \"name\":
+        \"South and South East Asian Collection\", \n                        \"museumobject_count\":
+        39132, \n                        \"source\": \"\", \n                        \"cis_id\":
+        null, \n                        \"museumobject_image_count\": 9197, \n                        \"type\":
+        \"\", \n                        \"slug\": \"ind\"\n                    }\n
+        \               }\n            ], \n            \"location\": \"In Storage\",
+        \n            \"marks\": \"\", \n            \"latitude\": \"25.42801000\",
+        \n            \"techniques\": [\n                {\n                    \"pk\":
+        11, \n                    \"model\": \"collection.technique\", \n                    \"fields\":
+        {\n                        \"name\": \"painting\", \n                        \"museumobject_count\":
+        10350, \n                        \"source\": \"cis_techniques\", \n                        \"cis_id\":
+        \"x30598\", \n                        \"museumobject_image_count\": 5970,
+        \n                        \"type\": \"\", \n                        \"slug\":
+        \"painting\"\n                    }\n                }\n            ], \n
+        \           \"materials\": [\n                {\n                    \"pk\":
+        16, \n                    \"model\": \"collection.material\", \n                    \"fields\":
+        {\n                        \"name\": \"paper\", \n                        \"museumobject_count\":
+        52557, \n                        \"source\": \"cis_materials\", \n                        \"cis_id\":
+        \"14177\", \n                        \"museumobject_image_count\": 21204,
+        \n                        \"type\": \"\", \n                        \"slug\":
+        \"paper\"\n                    }\n                }, \n                {\n
+        \                   \"pk\": 62, \n                    \"model\": \"collection.material\",
+        \n                    \"fields\": {\n                        \"name\": \"watercolour\",
+        \n                        \"museumobject_count\": 34261, \n                        \"source\":
+        \"cis_materials\", \n                        \"cis_id\": \"x33202\", \n                        \"museumobject_image_count\":
+        7107, \n                        \"type\": \"\", \n                        \"slug\":
+        \"watercolour\"\n                    }\n                }\n            ],
+        \n            \"edition_number\": \"\", \n            \"styles\": [], \n            \"inventory_set\":
+        [\n                {\n                    \"pk\": 23073, \n                    \"model\":
+        \"collection.inventory\", \n                    \"extras\": {\n                        \"gallery_id\":
+        null\n                    }, \n                    \"fields\": {\n                        \"box\":
+        \"\", \n                        \"case\": \"\", \n                        \"inventory_number\":
+        457435, \n                        \"room\": \"\", \n                        \"part_name\":
+        \"\", \n                        \"museum_number\": \"IS.245-1952\", \n                        \"museumobject\":
+        15553, \n                        \"shelf\": \"\", \n                        \"site\":
+        \"\", \n                        \"on_display\": false, \n                        \"status\":
+        \"\", \n                        \"location\": \"In Storage\", \n                        \"museum_number_token\":
+        \"is2451952\", \n                        \"gallery\": null\n                    }\n
+        \               }\n            ], \n            \"updated\": null, \n            \"galleries\":
+        [], \n            \"names\": [\n                {\n                    \"pk\":
+        3, \n                    \"model\": \"collection.name\", \n                    \"fields\":
+        {\n                        \"death_date\": null, \n                        \"surname\":
+        \"\", \n                        \"name\": \"Unknown\", \n                        \"gender\":
+        null, \n                        \"museumobject_count\": 110568, \n                        \"death_year\":
+        null, \n                        \"source\": \"object_production\", \n                        \"cis_id\":
+        \"A1848\", \n                        \"museumobject_image_count\": 45192,
+        \n                        \"forename\": \"\", \n                        \"birth_date\":
+        null, \n                        \"nationality\": \"\", \n                        \"type\":
+        \"person\", \n                        \"slug\": \"unknown\", \n                        \"birth_year\":
+        null\n                    }\n                }\n            ], \n            \"placecontext_set\":
+        [\n                {\n                    \"pk\": 16645, \n                    \"model\":
+        \"collection.placecontext\", \n                    \"extras\": {\n                        \"place_id\":
+        207\n                    }, \n                    \"fields\": {\n                        \"part_name\":
+        \"\", \n                        \"uncertainty\": \"\", \n                        \"museumobject\":
+        15553, \n                        \"role\": \"made\", \n                        \"place\":
+        207, \n                        \"order\": 1\n                    }\n                }\n
+        \           ], \n            \"original_currency\": \"\", \n            \"museum_number_token\":
+        \"is2451952\", \n            \"object\": \"Painting\", \n            \"categories\":
+        [\n                {\n                    \"pk\": 44, \n                    \"model\":
+        \"collection.category\", \n                    \"fields\": {\n                        \"name\":
+        \"Paintings\", \n                        \"museumobject_count\": 12007, \n
+        \                       \"source\": \"cis_category\", \n                        \"cis_id\":
+        null, \n                        \"museumobject_image_count\": 7989, \n                        \"type\":
+        \"\", \n                        \"slug\": \"paintings\"\n                    }\n
+        \               }\n            ], \n            \"last_checked\": \"2012-11-15
+        17:46:42\", \n            \"public_access_description\": \"In this painting
+        a nobleman is shown dislodging fruit from a mango tree by throwing stones
+        at it. The style of the painting locates the scene in the former principality
+        of Bundi in Rajasthan in north-west India. It was probably made for a local
+        nobleman or ruler by artists local to the area.\\n\\nAlthough mango trees
+        grow wild in the jungles of India, this must be a cultivated specimen since
+        the fruit of the wild tree is inedible. The original word for mango in the
+        Tamil language was \\u2018man-kay\\u2019, which was adapted by Portuguese
+        settlers in India into \\u2018manga\\u2019 and eventually by the British into
+        the familiar mango.\", \n            \"exhibition_history\": \"\", \n            \"bibliography\":
+        \"\", \n            \"vanda_exhibition_history\": \"\", \n            \"slug\":
+        \"a-man-hurling-stones-at-painting-unknown\", \n            \"sys_updated\":
+        \"2012-02-10 00:00:00\", \n            \"image_set\": [\n                {\n
+        \                   \"pk\": 50595, \n                    \"model\": \"collection.image\",
+        \n                    \"fields\": {\n                        \"sys_updated\":
+        \"2012-06-20 00:00:00\", \n                        \"last_processed\": \"2012-11-15
+        16:42:32\", \n                        \"priority\": 0, \n                        \"image_id\":
+        \"2006AH4468\", \n                        \"sys_id\": 74468, \n                        \"last_checked\":
+        \"2012-11-15 16:42:32\", \n                        \"size_bytes\": null, \n
+        \                       \"local\": \"collection_images/2006AH/2006AH4468.jpg\"\n
+        \                   }\n                }\n            ], \n            \"places\":
+        [\n                {\n                    \"pk\": 207, \n                    \"model\":
+        \"collection.place\", \n                    \"extras\": {\n                        \"parent_id\":
+        37\n                    }, \n                    \"fields\": {\n                        \"name\":
+        \"Bundi\", \n                        \"parent\": 37, \n                        \"country\":
+        \"India\", \n                        \"museumobject_count\": 18, \n                        \"longitude\":
+        \"75.64340000\", \n                        \"source\": \"production\", \n
+        \                       \"cis_id\": \"x35131\", \n                        \"museumobject_image_count\":
+        11, \n                        \"latitude\": \"25.42801000\", \n                        \"type\":
+        \"inhabited place\", \n                        \"slug\": \"bundi-india-x35131\"\n
+        \                   }\n                }\n            ], \n            \"artist\":
+        \"Unknown\", \n            \"namecontext_set\": [\n                {\n                    \"pk\":
+        15729, \n                    \"model\": \"collection.namecontext\", \n                    \"extras\":
+        {\n                        \"name_id\": 3\n                    }, \n                    \"fields\":
+        {\n                        \"name\": 3, \n                        \"part_name\":
+        \"\", \n                        \"uncertainty\": \"\", \n                        \"museumobject\":
+        15553, \n                        \"role\": \"production\", \n                        \"order\":
+        1\n                    }\n                }\n            ], \n            \"historical_significance\":
+        \"\", \n            \"year_end\": 1875, \n            \"object_number\": \"O81756\",
+        \n            \"events\": [], \n            \"credit\": \"Given by Col. T.
+        G. Gayer-Anderson CMG, DSO, and his twin brother Maj. R. G. Gayer-Anderson\",
+        \n            \"history_note\": \"\", \n            \"place\": \"Bundi\",
+        \n            \"production_note\": \"\", \n            \"historical_context_note\":
+        \"\", \n            \"collection_code\": \"IND\"\n        }\n    }\n]"
+    http_version: 
+  recorded_at: Mon, 26 Nov 2012 16:09:50 GMT
+recorded_with: VCR 2.3.0
