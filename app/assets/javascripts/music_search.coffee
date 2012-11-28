@@ -38,7 +38,6 @@ class window.MusicSearch
         didActivate = false
 
         if !current?
-          console.log('activated')
           tracks[0].loadRdio ->
             $('#music').html(tracks[0].el)
             tracks[0].activate()
@@ -50,7 +49,6 @@ class window.MusicSearch
             if ((track.get('name') isnt current.get('name')) && 
                 (track.get('artist') isnt current.get('artist')))
               selectedTrack = track
-              console.log 'activated'
               didActivate = true
               track.loadRdio ->
                 $('#music').html(track.el)
@@ -58,9 +56,6 @@ class window.MusicSearch
                 BeatBrush.currentTrack = track
 
           if (!didActivate)
-            console.log 'same track'
-            console.log current, tracks
-            console.log selectedTrack, tracks
             $('header .notice').show().text("No music found. Try again.")
 
 
