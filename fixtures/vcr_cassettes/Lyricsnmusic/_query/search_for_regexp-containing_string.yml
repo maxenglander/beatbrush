@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lyricsnmusic.com/songs?q=straw%20mij...goede...%5Bin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "U2VydmVy":
+      - !binary |-
+        bmdpbng=
+      !binary "RGF0ZQ==":
+      - !binary |-
+        V2VkLCAyOCBOb3YgMjAxMiAxNzoyODozOSBHTVQ=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+      !binary "RXRhZw==":
+      - !binary |-
+        ImY5ZDg3MmRkZTYzOWYwNDNjODU0ZGQ2ZWI2MDAxYzg5Ig==
+      !binary "WC1Ub3RhbHBhZ2Vz":
+      - !binary |-
+        MA==
+      !binary "WC1SdW50aW1l":
+      - !binary |-
+        MjE0
+      !binary "WC1QYWdl":
+      - !binary |-
+        MQ==
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZSwgbWF4LWFnZT0wLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "WC1WYXJuaXNo":
+      - !binary |-
+        OTkzOTI3MTE3
+      !binary "QWdl":
+      - !binary |-
+        MA==
+      !binary "Vmlh":
+      - !binary |-
+        MS4xIHZhcm5pc2g=
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+SWT2/bOBDFv8pAF18su067CZJbtt1sA3R7aAL00O6BlkYS
+        Yf4xSCqKUPS79w1ld+3dLZAEOXSxgAHb1PAN9XvDIT99KVRIOqbi4kvhlOXi
+        oli9oMsmcSjmRR8MBrqUthfL5TAMCzMGXUVn+6irReXtcvWiVDn467xIOhkR
+        uO10pDdqJO0odUzvdNulR6ktEyTKWo2ldiUkSiMS5RS/NM5erE5/WUEyOr3d
+        MlZfDD7UkSrlnE/E99vAMX4On50swHrLLkWKW3zRoFNHo+/lac28zQNYqh2p
+        Y9AgPTOGqo6Djh3JSggrkehBmY12i8UCmSvvEt8js+uNmRd3mge1ltdPoed5
+        oV3ED0mrzBTzdf4vrC8zp+TpA1u26wdCVxlN8mXYzzqgf0k3HRDs2L9RYfM0
+        TYxECO0dqCF0ZMDZ+emRAYZBOKkNS15La1Vt5MVkEVDOXgwdOxoYn8DUKKtN
+        xgrw68AKrgwqijPh+//DCXjgWon/yQ14q+6YrpRUGUz4g5+Iv4NM2YiMWGD5
+        EP7JydkR+5yy2ae0LJReqz5mL4BOBfmlXQuHOpXoeob4yIB7TbV3s0RrNprv
+        8sQbT5VBrFAZJBrgaeP8QOonJ3+bC961HATDTZKceA9FVzo81Yap9kVTbIg7
+        zVKVDTT/tiHOj0yJngQa6Ek/yQD5XlXJjBNWnahhNpGM3mTwYLGGV478Gnkq
+        wzR1pWHqPmLDkM3C4pR2f409qy3Sf+nsYbQktjw7tOA9Ws9vzvdtR2+xkeO+
+        D71/8BmwE12ij5eclcpOlPaNyP3zKFi9PAJ/TS1WAfy2rzpU+KDQ9QE3Thx/
+        9Lj2u/MCm8VhLwTZITbSZMu0lByhLe8Gnx/8lQ+S+hGkmt2MAxOuvDGoth36
+        12F8vNyyyRp76FUYj5GfvjpC/iuju9RT725UpWqmTtccpZrxwFudBIngM31E
+        4ftAW4+2joCa0hhwbmdzbtUmb9n6Dq6olsk3kyqO7pqft/Vja/2OxA8sSzuW
+        bY4+AP0xXwjax190vqstpztF++OLzsnq5Ai1NLnY41j0OGpRif0W/UAZwtXF
+        jPNc4GkG8KhP1Sfd9Ab3n5C7xWw6E65nFltAuxlKfnD7Qzpo2J4tyKUdeP2/
+        hP3yPwb7z28AAAD//wMAAWdAdMMLAAA=
+    http_version: 
+  recorded_at: Wed, 28 Nov 2012 17:28:38 GMT
+recorded_with: VCR 2.3.0

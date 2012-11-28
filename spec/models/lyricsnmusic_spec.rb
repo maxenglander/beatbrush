@@ -31,5 +31,16 @@ describe Lyricsnmusic do
         end
       end
     end
+
+    context "search for regexp-containing string" do
+      use_vcr_cassette
+
+      it "should not blow up" do
+        lambda do
+          # an actual string from the app.
+          tracks = Lyricsnmusic.query(["straw mij...goede...[in"])
+        end.should_not raise_error
+      end
+    end
   end
 end

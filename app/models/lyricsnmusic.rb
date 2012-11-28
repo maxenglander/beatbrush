@@ -24,6 +24,6 @@ class Lyricsnmusic
   private 
 
   def self.contains_words(words, string)
-    words.any? { |w| string =~ /#{w}/i }
+    words.any? { |w| string =~ /#{Regexp.escape(w)}/i }
   end
 end
