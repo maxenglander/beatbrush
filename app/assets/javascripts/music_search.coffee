@@ -2,7 +2,6 @@ class window.MusicSearch
   constructor : (@words) ->
 
   search : (callback) =>
-    Utility.setSearchTerm(@words)
     $.ajax
       url: "/music/search"
       data:
@@ -34,18 +33,36 @@ class window.MusicSearch
         $('header button').one 'click', ->
           $('header .notice').fadeOut()
       else
-        current = Utility.current_track
+        current = BeatBrush.currentTrack
         selectedTrack = undefined
+        didActivate = false
 
+        if !current?
+          console.log('activated')
+          tracks[0].loadRdio ->
+            $('#music').html(tracks[0].el)
+            tracks[0].activate()
+            BeatBrush.currentTrack = tracks[0]
+        else
         # Pick a track
-        _.each tracks, (track) =>
-          return if (selectedTrack)
-          if ((track.get('name') isnt current.get('name')) && 
-              (track.get('artist') isnt current.get('artist')))
-            selectedTrack = track
-            track.loadRdio ->
-              $('#music').html(track.el)
-              track.activate()
+          _.each tracks, (track) =>
+            return if (selectedTrack)
+            if ((track.get('name') isnt current.get('name')) && 
+                (track.get('artist') isnt current.get('artist')))
+              selectedTrack = track
+              console.log 'activated'
+              didActivate = true
+              track.loadRdio ->
+                $('#music').html(track.el)
+                track.activate()
+                BeatBrush.currentTrack = track
+
+          if (!didActivate)
+            console.log 'same track'
+            console.log current, tracks
+            console.log selectedTrack, tracks
+            $('header .notice').show().text("No music found. Try again.")
+
 
   handleError : (resp) =>
     console.log('error!', resp)

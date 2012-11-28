@@ -4,10 +4,6 @@ describe "Track", ->
 
   describe "constructor", ->
 
-    it "should set the Utility current track", ->
-      track = new Track({})
-      expect(Utility.current_track).toBe(track)
-
     it "should construct the dom element", ->
       el = (new Track({})).el
       _.each ['.image','.data','p.name','p.lyrics'], (sel) ->
@@ -41,11 +37,6 @@ describe "Track", ->
   describe "_activateCallback", ->
     beforeEach ->
       @track = new Track { gr_id : "1234" }
-
-    it "should set Utility.current_track", ->
-      Utility.current_track = undefined
-      @track._activateCallback()
-      expect(Utility.current_track).toBe(@track)
 
     it "should add class 'activated' to el", ->
       @track._activateCallback()

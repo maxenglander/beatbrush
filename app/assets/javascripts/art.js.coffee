@@ -1,9 +1,4 @@
 $ ->
-  $("body").on "click", "#brush", -> 
-    if Utility.current_track?
-      word = Utility.current_track.findInterestingWord()
-      Art.search word
-      $('#art > div').addClass('slideOut')
   $("#art").on 'click', '.expand-description', ->
     desc = $(@).siblings('.description')
     if desc.is(':visible')
@@ -22,28 +17,14 @@ class @Art
   @SEARCH_URI: "/arts/search.json"
 
   @search: (@term) ->
-    Utility.setSearchTerm(@term)
     search_uri = "#{@SEARCH_URI}?term=#{term}"
     $.get search_uri, (data) => 
       arts = (new Art(i) for i in data)
       @setCollection arts
 
-  @beatHandler: ->
-    if @arts && @arts[0]?
-      words = @arts[0].find_interesting_words()
-      ms = new MusicSearch(words)
-      ms.searchAndPlay()
-      $('#music .music').addClass('slideOut')
-    else
-      $('header .notice').show().text("No dice. Try brush.")
-      $('header button').one 'click', ->
-        $('header .notice').fadeOut()
-
   @setCollection: (@arts) ->
-    $("body").off "click", "#beat"
-    $("body").on "click", "#beat", =>
-      @beatHandler()
     if arts[0]?
+      BeatBrush.currentArt = arts[0]
       image = """
       <div class="image">
         <img src='#{arts[0].image_url(Art.SIZE_768)}' />
@@ -62,6 +43,7 @@ class @Art
       $('#art').imagesLoaded ->
         $('.art', @).addClass('imagesLoaded')
     else
+      BeatBrush.currentArt = undefined
       $('#art').html("""<p>No art.</p>""")
 
   constructor: (@data) ->

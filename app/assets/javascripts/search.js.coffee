@@ -42,9 +42,11 @@ class @Search
 
   submit : (e) =>
     @clearStatus()
+    terms = @getTerms()
     search = new @musicSearcher(@getTerms())
     search.searchAndPlay (tracks) =>
       if _.any?(tracks)
+        BeatBrush.setSearchTerm(terms)
         Art.search(@getTerms())
         @toggleOff()
       else

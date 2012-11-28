@@ -1,13 +1,4 @@
 $ ->
-  if R?
-    hasStarted = false
-    R.ready ->
-      R.player.on "change:playState", (state) ->
-        console.log("Play state changed to #{state}")
-        if state is R.player.PLAYSTATE_STOPPED
-          if hasStarted
-            $('header button#beat').click()
-        hasStarted = true
   $('#music').bind 'click', '.expand-lyrics', ->
     lyrics = $(@).find('.lyrics')
     if lyrics.is(':visible')
@@ -26,7 +17,6 @@ class @Track
       @_attrs = {}
     unless @get('R')?
       @set('R', window.R)
-    Utility.current_track = @
     @el = $("""<div class='music'>
       <div class="image"></div>
       <div class="data">
@@ -86,7 +76,6 @@ class @Track
       successCallback()
 
   _activateCallback : ->
-    Utility.current_track = @
     @el.addClass('activated')
     [r, key] = [@get('R'), @get('key')]
     r.player.play source: key if r? and key?
