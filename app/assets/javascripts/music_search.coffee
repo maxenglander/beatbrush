@@ -29,9 +29,7 @@ class window.MusicSearch
     @search (tracks) ->
       callback.call(this, tracks) if callback?
       if tracks.length is 0
-        $('header .notice').show().text("No music found. Try again.")
-        $('header button').one 'click', ->
-          $('header .notice').fadeOut()
+        BeatBrush.beat()
       else
         current = BeatBrush.currentTrack
         selectedTrack = undefined
@@ -56,7 +54,7 @@ class window.MusicSearch
                 BeatBrush.currentTrack = track
 
           if (!didActivate)
-            $('header .notice').show().text("No music found. Try again.")
+            BeatBrush.beat()
 
 
   handleError : (resp) =>

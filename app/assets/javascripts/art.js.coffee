@@ -33,8 +33,7 @@ class @Art
       $('#art').imagesLoaded ->
         $('.art', @).addClass('imagesLoaded')
     else
-      BeatBrush.currentArt = undefined
-      $('#art').html("""<p>No art.</p>""")
+      BeatBrush.brush()
 
   constructor: (@data) ->
 

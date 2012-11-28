@@ -1,4 +1,6 @@
 $ ->
+  $('body').on 'click', '#beat',  BeatBrush.beat
+  $('body').on 'click', '#brush', BeatBrush.brush
   if R?
     hasStarted = false
     R.ready ->
@@ -8,9 +10,6 @@ $ ->
           if hasStarted
             BeatBrush.beatnbrush()
         hasStarted = true
-$ ->
-  $('body').on 'click', '#beat',  BeatBrush.beat
-  $('body').on 'click', '#brush', BeatBrush.brush
 
 class @BeatBrush
 

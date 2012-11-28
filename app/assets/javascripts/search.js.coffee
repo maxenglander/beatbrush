@@ -49,6 +49,7 @@ class @Search
         BeatBrush.setSearchTerm(terms)
         Art.search(@getTerms())
         @toggleOff()
+        $('header .notice').fadeOut()
       else
         @setStatus('No results found.')
     e.preventDefault()
