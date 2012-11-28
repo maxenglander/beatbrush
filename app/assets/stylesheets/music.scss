@@ -44,17 +44,6 @@
   .lyrics {
     margin: auto;
     max-width: 340px;
-    display: none;
-  }
-  .expand-lyrics {
-    text-align: center;
-    opacity: 0;
-    -webkit-transition: 0.2s all ease-in-out;
-    a {
-      color: #555;
-      font-size: 0.9em;
-      text-transform: uppercase;
-    }
   }
   &.withFullLyrics {
     .expand-lyrics {

@@ -1,12 +1,3 @@
-$ ->
-  $("#art").on 'click', '.expand-description', ->
-    desc = $(@).siblings('.description')
-    if desc.is(':visible')
-      desc.slideUp()
-    else
-      desc.slideDown()
-    false
-
 class @Art
   @IMG_ROOT_URL: "http://media.vam.ac.uk/media/thira/collection_images"
   @SIZE_70: "s"
@@ -36,7 +27,6 @@ class @Art
       $('#art').html("""
         <div class='art'>
           #{image}
-          <p class="expand-description"><a href="#">Description</a></p>
           <p class="description">#{meta}</p>
         </div>"""
       ).highlight(@term)

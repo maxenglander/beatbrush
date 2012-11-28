@@ -1,13 +1,3 @@
-$ ->
-  $('#music').bind 'click', '.expand-lyrics', ->
-    lyrics = $(@).find('.lyrics')
-    if lyrics.is(':visible')
-      lyrics.slideUp()
-    else
-      lyrics.slideDown()
-    false
-
-
 class @Track
 
   constructor : (attrs) ->
@@ -21,7 +11,6 @@ class @Track
       <div class="image"></div>
       <div class="data">
         <p class="name"></p>
-        <p class="expand-lyrics"><a href="#">Lyrics</a></p>
         <p class="lyrics"></p>
       </div>
       </div>""")
