@@ -66,19 +66,24 @@ class @Track
   #
   # Accepts a callback to be called when activated.
   activate : ->
-    $.ajax
-      url: "/music/lyrics"
-      type: "GET"
-      dataType: "JSON"
-      data:
-        gr_id: @get('gr_id')
-        title: @get('name')
-        artist: @get('artist')
-      success: (resp) =>
+    successCallback = (resp) =>
+      if resp?
         @set 'full_lyrics', resp.lyrics
-        @el.addClass('withFullLyrics')
         @el.find('.lyrics').html("""#{@lyrics()}""")
-        @_activateCallback()
+      @el.addClass('withFullLyrics')
+      @_activateCallback()
+    if @get('gr_id')?
+      $.ajax
+        url: "/music/lyrics"
+        type: "GET"
+        dataType: "JSON"
+        data:
+          gr_id: @get('gr_id')
+          title: @get('name')
+          artist: @get('artist')
+        success: successCallback
+    else
+      successCallback()
 
   _activateCallback : ->
     Utility.current_track = @

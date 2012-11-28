@@ -29,6 +29,15 @@ describe "Track", ->
         # Ideally would test the parameters passed to $.ajax...
         expect($.ajax).toHaveBeenCalled()
 
+    context "without gracenote id", ->
+      beforeEach ->
+        @track = new Track {}
+
+      it "should call the callback immediately", ->
+        spyOn(@track, '_activateCallback')
+        @track.activate()
+        expect(@track._activateCallback).toHaveBeenCalled()
+
   describe "_activateCallback", ->
     beforeEach ->
       @track = new Track { gr_id : "1234" }
