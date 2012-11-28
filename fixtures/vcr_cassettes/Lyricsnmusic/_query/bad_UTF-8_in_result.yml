@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lyricsnmusic.com/songs?q=hollar%20scene
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "U2VydmVy":
+      - !binary |-
+        bmdpbng=
+      !binary "RGF0ZQ==":
+      - !binary |-
+        V2VkLCAyOCBOb3YgMjAxMiAxODowMzoyMiBHTVQ=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+      !binary "RXRhZw==":
+      - !binary |-
+        ImMxZjhiMGJlNjQwNDE5NTEwZjc0ZDk1MDNmNmNlYWIxIg==
+      !binary "WC1Ub3RhbHBhZ2Vz":
+      - !binary |-
+        MQ==
+      !binary "WC1SdW50aW1l":
+      - !binary |-
+        MjI0
+      !binary "WC1QYWdl":
+      - !binary |-
+        MQ==
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZSwgbWF4LWFnZT0wLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "WC1WYXJuaXNo":
+      - !binary |-
+        MTAwMzIxOTc3NA==
+      !binary "QWdl":
+      - !binary |-
+        MA==
+      !binary "Vmlh":
+      - !binary |-
+        MS4xIHZhcm5pc2g=
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA9xW328jNRD+V0b7wL1ks21B7bU6IXGU4yLuABFEhdo+THYn
+        6yFeO9jeLMvp/jr+McY2CbdVERUtL/eQyL/mm/F883n2+l2BLrAPxcW7wmBH
+        xUWx3PRaw2Xfto5GQNPAKybTFLOid1r2VQjbi6oahmGuR8e1N13vuZ7Xtqt8
+        tC2bbFuKbblOtu9nReCgI/yP5AN31oyPAazCHqXMJtXJ6dHpZyfHAuoNb7ck
+        NyrWhKF3bNp8A3jr5rAkt4PvDNy4G3Odlm/TeAEKdwQIB+S0nJPxD5sJ4+90
+        kRv3WHKBAAOGWgHtZB0c1QFNqwmC4zzoRljP53OJuLYm0G8xYhgUGRhtD4rQ
+        QUfwgrrPldUa3YtKhrDVhJ6gdWhChHD0ay9BJb9fYi9bG9aanIcVKZZLoxlX
+        thlh4KDiDdBswBoIithBrfa2D8xHXpaYd0wDriKjwfU0K9h4GXRkAgqna9Se
+        3s/uqa4fSIuTAN88iH6XT5ebSQUpgmVNhlJxvib3sNo8YFVy99JHgFRQSgD2
+        VaRNd3F6cjqpoqUVMhwBB2Av/888/BLp7Sgm5AtoeL2WfblTIwnoyMGqDzG/
+        4OXKYHUjVGBI2QvgiToPmjeUKyOoWJ8C3N6pBSNl9W9pjmfuzfKSNBmEr21H
+        v6csTRY+SdGlFD5MhMm4bKNxStlk4ZDNDzm65Jo8XF8pC0scPZSw3KJhr+An
+        qU225vYpPVdNdFcOypZevJU++yp32deH7B6fnZ1P6P0WGwTRkBS6cDcDs5/X
+        2K0Y3TwS9711EBgSnTtubvqjIzqHhuQg50lULZBDEP06Qs0NNrMkSiGUWxtt
+        BbX546Oi+TXnSn/DrQr+SSlVHNJMJ+g7FJ5NKFxETcYwVnZMj6eJ0oIQpbfI
+        WpPVLMC/TrbsdDqqKUArPxxwnJywJlmJiAeZo6gbPyrqrmKnSV56I15FrZd2
+        ME9KYWxmedob2RSFNuLiDpXPJ1S+JIkKQVt5FBscZ9JEOcQXch0VKNGaWA5C
+        LUgglDuSNLF6E3vhYquEtaS6NxQf6PjaSkuVx7c/OTo+l0fWRixrZjL639h8
+        FHn3crUwoZc0SNsu4dXho+YrwYGXpLVMyD3CVcV7/PLwyVSSmJarPfqUtOef
+        Tki7zte/zXSsiXQWHT/rhD+9SR0uF5vfJJVdWVQziP9x9rN8YkgTxlHeYJQv
+        lyG1WxMppZH8xOC/snb7JwAAAP//AwCK+vrP6woAAA==
+    http_version: 
+  recorded_at: Wed, 28 Nov 2012 18:03:21 GMT
+recorded_with: VCR 2.3.0

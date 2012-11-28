@@ -11,9 +11,9 @@ class Lyricsnmusic
     data = JSON.parse(resp.body)
     tracks = data.map do |d|
       {
-        artist: d["artist"]["name"],
-        name: d["title"],
-        lyrics: d["context"].present? ? d["context"] : d["snippet"],
+        artist: prep(d["artist"]["name"]),
+        name: prep(d["title"]),
+        lyrics: d["context"].present? ? prep(d["context"]) : prep(d["snippet"]),
         context: words
       }
     end.select do |d|
@@ -22,6 +22,10 @@ class Lyricsnmusic
   end
 
   private 
+
+  def self.prep(string)
+    string.encode('UTF-8', 'UTF-8', :invalid => :replace)
+  end
 
   def self.contains_words(words, string)
     words.any? { |w| string =~ /#{Regexp.escape(w)}/i }

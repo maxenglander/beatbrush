@@ -42,5 +42,16 @@ describe Lyricsnmusic do
         end.should_not raise_error
       end
     end
+
+    context "bad UTF-8 in result" do
+      use_vcr_cassette
+
+      it "should not blow up" do
+        lambda do
+          # this search causes a bad UTF-8 formatted result
+          tracks = Lyricsnmusic.query(["hollar","scene"])
+        end.should_not raise_error
+      end
+    end
   end
 end
