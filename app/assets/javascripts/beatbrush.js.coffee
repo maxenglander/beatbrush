@@ -1,4 +1,5 @@
 $ ->
+  $('body').on 'click', '#term',  BeatBrush.beatnbrush
   $('body').on 'click', '#beat',  BeatBrush.beat
   $('body').on 'click', '#brush', BeatBrush.brush
   if R?

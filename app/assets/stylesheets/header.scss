@@ -19,6 +19,11 @@ header {
     margin: 0px;
   }
 
+  button {
+    position: relative;
+    z-index: 15;
+  }
+
   .new-search {
     position: absolute;
     right: 10px;
@@ -41,11 +46,13 @@ header {
     top: 6px;
   }
 
-  #term {
+  #term-wrapper {
     width: 100%;
     position: absolute;
     text-align: center;
     font-size: 29px;
-    z-index: -10;
+  }
+  #term {
+    display: inline;
   }
 }
